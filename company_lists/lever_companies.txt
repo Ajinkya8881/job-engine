@@ -14,6 +14,7 @@ docker
 elastic
 eventbrite
 figma
+freecharge
 games24x7
 gitlab
 groww
@@ -22,6 +23,7 @@ jar
 jupiter
 khanacademy
 khatabook
+mobiqwik
 mpl
 netflix
 netlify
@@ -38,5 +40,6 @@ slice
 spinny
 udemy
 unity
+urbanic
 wazirx
 webflow

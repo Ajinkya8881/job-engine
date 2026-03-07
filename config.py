@@ -1,32 +1,39 @@
 import os
 
-# Use environment variables for security
-# On your laptop, you can set these or just keep them here for local use 
-# BUT for GitHub, we will use "Secrets"
+# Base directory of the project
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
 BOT_TOKEN = os.getenv("BOT_TOKEN", "8772510865:AAGqfz_5J2zrqO1FJtixQ3PzUbQWc__EXso")
 CHAT_ID = os.getenv("CHAT_ID", "860544852")
 
-# Resume Data
 RESUME_DATA = {
     "first_name": "Ajinkya",
     "last_name": "Kolhe",
     "email": "aj.kolhe9657@gmail.com",
-    "phone": "+919657817634",
+    "phone": "9657817634", # Removed +91 here to handle formatting in bot
+    "country_code": "+91",
     "linkedin": "https://www.linkedin.com/in/ajinkya-kolhe-9543b9263",
     "github": "https://github.com/Ajinkya8881",
     "portfolio": "",
-    "resume_path": os.path.join(os.getcwd(), "resume.pdf")
+    "resume_path": os.path.join(BASE_DIR, "resume.pdf"),
+    
+    # Standard Answers for common questions
+    "current_company": "Fresher / Student",
+    "current_title": "Software Engineer",
+    "work_authorization": "No", # For US companies
+    "sponsorship_required": "Yes", # For global roles
+    "previously_employed": "No",
+    "heard_about_us": "LinkedIn",
+    "gender": "Male",
+    "race": "Asian",
+    "specialty": "Backend"
 }
 
-# ... rest of config ...
-# (keeping the rest of the logic same)
-LOCATIONS = ["Hyderabad", "Pune", "Bangalore", "Gurgaon", "Remote", "India"]
-EXPERIENCE_LEVEL = "Fresher"
-SEEN_JOBS_FILE = "storage/seen_jobs.txt"
-JOBS_DB_FILE = "storage/jobs_db.json"
-GREENHOUSE_COMPANIES_FILE = "company_lists/greenhouse_companies.txt"
-LEVER_COMPANIES_FILE = "company_lists/lever_companies.txt"
-YC_COMPANIES_FILE = "company_lists/yc_companies.txt"
+SEEN_JOBS_FILE = os.path.join(BASE_DIR, "storage", "seen_jobs.txt")
+JOBS_DB_FILE = os.path.join(BASE_DIR, "storage", "jobs_db.json")
+GREENHOUSE_COMPANIES_FILE = os.path.join(BASE_DIR, "company_lists", "greenhouse_companies.txt")
+LEVER_COMPANIES_FILE = os.path.join(BASE_DIR, "company_lists", "lever_companies.txt")
+YC_COMPANIES_FILE = os.path.join(BASE_DIR, "company_lists", "yc_companies.txt")
 
 BACKEND_KEYWORDS = [
     "backend", "software engineer", "java", "spring", "api", 
@@ -46,5 +53,4 @@ EXCLUDE_KEYWORDS = [
 
 SKILLS = ["Java", "Spring", "Spring Boot", "MySQL", "SQL", "Git", "GitHub", "Postman", "REST API", "Docker", "Kafka", "Microservices", "DSA"]
 
-WEIGHTS = {"resume_match": 0.4, "recency": 0.2, "reputation": 0.1, "backend_relevance": 0.2, "remote": 0.1, "location_match": 0.3}
 MIN_SCORE_TO_ALERT = 40
