@@ -47,7 +47,14 @@
                 <h2>{{ job.title }}</h2>
                 <div class="company">{{ job.company }}</div>
                 <div style="font-size: 0.8em; color: var(--secondary);">📍 {{ job.location }}</div>
+
+                <div style="margin-top: 10px; display: flex; gap: 10px;">
+                    {% if job.salary_est != "N/A" %}<span style="background: rgba(245, 158, 11, 0.1); color: var(--warning); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold;">💰 {{ job.salary_est }}</span>{% endif %}
+                    {% if job.visa_sponsorship %}<span style="background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold;">✈️ VISA SPONSOR</span>{% endif %}
+                </div>
+
                 <div class="intel">
+
                     <div class="match"><b>✅ Matches:</b> {{ job.matched_skills|join(', ') }}</div>
                     {% if job.missing_skills %}<div class="missing"><b>⚠️ Missing:</b> {{ job.missing_skills|join(', ') }}</div>{% endif %}
                 </div>
@@ -68,7 +75,14 @@
                 <h2>{{ job.title }}</h2>
                 <div class="company">{{ job.company }}</div>
                 <div style="font-size: 0.8em; color: var(--secondary);">📍 {{ job.location }}</div>
-                <div class="intel"><div class="match"><b>✅ Matches:</b> {{ job.matched_skills|join(', ') }}</div></div>
+
+                <div style="margin-top: 10px; display: flex; gap: 10px;">
+                    {% if job.salary_est != "N/A" %}<span style="background: rgba(245, 158, 11, 0.1); color: var(--warning); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold;">💰 {{ job.salary_est }}</span>{% endif %}
+                    {% if job.visa_sponsorship %}<span style="background: rgba(56, 189, 248, 0.1); color: var(--primary); padding: 2px 8px; border-radius: 4px; font-size: 0.7em; font-weight: bold;">✈️ VISA SPONSOR</span>{% endif %}
+                </div>
+
+                <div class="intel">
+<div class="match"><b>✅ Matches:</b> {{ job.matched_skills|join(', ') }}</div></div>
                 <div class="actions">
                     <button class="btn" onclick="generateCoverLetter('{{ job.company }}', '{{ job.title }}')">📄 Cover Letter</button>
                     <a href="{{ job.url }}" target="_blank" class="btn btn-apply" onclick="updateStatus('{{ job.company }}', '{{ job.title }}', 'applied')">Apply with Simplify</a>
