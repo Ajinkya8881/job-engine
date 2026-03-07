@@ -3,7 +3,9 @@ name: Job Engine 24/7
 on:
   schedule:
     - cron: '0 */6 * * *' # Run every 6 hours
-  workflow_dispatch: # Allow manual trigger
+  push:
+    branches: [ main ] # Run immediately on every push to main
+  workflow_dispatch: # Allow manual trigger button
 
 jobs:
   scan-jobs:
@@ -24,13 +26,9 @@ jobs:
 
     - name: Run Job Engine
       env:
-        # Secrets must be set in GitHub Repo Settings
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
       run: |
-        # Run the main engine script once (it has discovery inside)
-        # We modify main.py slightly to NOT loop forever in CI, or we use a timeout.
-        # Ideally, we refactor main.py to have a 'run_once' flag.
         python main.py --run-once
 
     - name: Commit & Push New Jobs
