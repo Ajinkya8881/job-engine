@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+storage/seen_jobs.txt
+storage/jobs_db.json
+resume.pdf
