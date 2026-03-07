@@ -1,0 +1,42 @@
+name: Job Engine 24/7
+
+on:
+  schedule:
+    - cron: '0 */6 * * *' # Run every 6 hours
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  scan-jobs:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.9'
+
+    - name: Install Dependencies
+      run: |
+        pip install requests schedule flask selenium beautifulsoup4 lxml python-telegram-bot fake-useragent webdriver-manager pandas tqdm geopy
+
+    - name: Run Job Engine
+      env:
+        # Secrets must be set in GitHub Repo Settings
+        BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
+        CHAT_ID: ${{ secrets.CHAT_ID }}
+      run: |
+        # Run the main engine script once (it has discovery inside)
+        # We modify main.py slightly to NOT loop forever in CI, or we use a timeout.
+        # Ideally, we refactor main.py to have a 'run_once' flag.
+        python main.py --run-once
+
+    - name: Commit & Push New Jobs
+      run: |
+        git config --global user.name "JobBot"
+        git config --global user.email "bot@github.com"
+        git add storage/seen_jobs.txt storage/jobs_db.json
+        git commit -m "Auto-update jobs [skip ci]" || echo "No changes to commit"
+        git push

@@ -1,0 +1,12 @@
+requests
+schedule
+flask
+selenium
+beautifulsoup4
+lxml
+python-telegram-bot
+fake-useragent
+webdriver-manager
+pandas
+tqdm
+geopy

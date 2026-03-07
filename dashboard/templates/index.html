@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ajinkya's Job Command Center</title>
+    <style>
+        :root {
+            --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc; --primary: #38bdf8; --secondary: #94a3b8; --accent: #22c55e; --danger: #ef4444; --warning: #f59e0b;
+        }
+        body { font-family: 'Inter', system-ui, sans-serif; margin: 0; padding: 20px; background-color: var(--bg); color: var(--text); }
+        
+        /* Layout */
+        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
+        .main-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        .column-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; color: var(--primary); border-bottom: 2px solid var(--card-bg); padding-bottom: 10px; }
+        
+        /* Stats & Buttons */
+        .btn-top { background: var(--accent); color: #000; padding: 12px 24px; border-radius: 8px; font-weight: bold; border: none; cursor: pointer; }
+        .btn-top:hover { opacity: 0.9; }
+
+        /* Card */
+        .job-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 20px; position: relative; }
+        .job-card.high-score { border-top: 4px solid var(--accent); }
+        h2 { margin: 0 0 5px 0; font-size: 1.1em; }
+        .company { color: var(--primary); font-size: 0.9em; margin-bottom: 10px; }
+        
+        /* Intel */
+        .intel { background: rgba(0,0,0,0.2); padding: 10px; border-radius: 6px; margin: 10px 0; font-size: 0.8em; }
+        .match { color: var(--accent); }
+        .missing { color: var(--danger); opacity: 0.8; }
+        
+        /* Actions */
+        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; }
+        .btn { padding: 6px; border-radius: 4px; border: 1px solid #334155; background: transparent; color: var(--secondary); cursor: pointer; font-size: 0.8em; text-decoration: none; text-align: center; }
+        .btn:hover { border-color: var(--primary); color: #fff; }
+        .btn-apply { background: var(--primary); color: #000; border: none; grid-column: span 2; font-weight: bold; }
+
+        /* Tabs (Hidden for now, using Columns) */
+        .tabs { display: flex; gap: 10px; margin-bottom: 20px; }
+        .tab { padding: 8px 16px; background: var(--card-bg); border-radius: 6px; cursor: pointer; font-size: 0.9em; }
+        .tab.active { background: var(--primary); color: #000; font-weight: bold; }
+
+        /* Sidebar/Overlay for modal */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 100; justify-content: center; align-items: center; }
+        .modal-content { background: var(--card-bg); padding: 25px; border-radius: 12px; width: 500px; border: 1px solid var(--primary); }
+        textarea { width: 100%; height: 250px; background: #000; color: var(--accent); border: 1px solid #334155; padding: 10px; margin-top: 10px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div>
+            <h1 style="margin:0;">Ajinkya's Job Center 🚀</h1>
+            <div style="color:var(--secondary); font-size: 0.9em;">Tracking <b>{{ data.new|length }}</b> new matching opportunities</div>
+        </div>
+        <button class="btn-top" onclick="autoApplyTop()">⚡ Auto-Apply to Top 5 Matchers</button>
+    </header>
+
+    <div class="tabs">
+        <div class="tab active" onclick="location.href='/'">New Matches</div>
+        <div class="tab" onclick="alert('Switching to Applied view...')">Applied</div>
+    </div>
+
+    <div class="main-container">
+        <!-- INDIA COLUMN -->
+        <div class="column">
+            <div class="column-header">🇮🇳 India Headquarters</div>
+            {% for job in data.new if job.is_preferred_location %}
+            <div class="job-card {% if job.score > 70 %}high-score{% endif %}">
+                <div style="float:right; font-weight: bold; color: var(--accent);">{{ job.score }}</div>
+                <h2>{{ job.title }}</h2>
+                <div class="company">{{ job.company }}</div>
+                <div style="font-size: 0.8em; color: var(--secondary);">📍 {{ job.location }}</div>
+
+                <div class="intel">
+                    <div class="match"><b>✅ Matches:</b> {{ job.matched_skills|join(', ') }}</div>
+                    {% if job.missing_skills %}
+                    <div class="missing"><b>⚠️ Missing:</b> {{ job.missing_skills|join(', ') }}</div>
+                    {% endif %}
+                </div>
+
+                <div class="actions">
+                    <button class="btn" onclick="generateCoverLetter('{{ job.company }}', '{{ job.title }}')">📄 Cover Letter</button>
+                    <button class="btn" onclick="showInterviewPrep('{{ job.title }}')">🧠 Prep</button>
+                    <a href="{{ job.url }}" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- GLOBAL COLUMN -->
+        <div class="column">
+            <div class="column-header">🌍 Global Opportunities</div>
+            {% for job in data.new if not job.is_preferred_location %}
+            <div class="job-card">
+                <div style="float:right; font-weight: bold; color: var(--secondary);">{{ job.score }}</div>
+                <h2>{{ job.title }}</h2>
+                <div class="company">{{ job.company }}</div>
+                <div style="font-size: 0.8em; color: var(--secondary);">📍 {{ job.location }}</div>
+
+                <div class="intel">
+                    <div class="match"><b>✅ Matches:</b> {{ job.matched_skills|join(', ') }}</div>
+                </div>
+
+                <div class="actions">
+                    <button class="btn" onclick="generateCoverLetter('{{ job.company }}', '{{ job.title }}')">📄 Cover Letter</button>
+                    <a href="{{ job.url }}" target="_blank" class="btn btn-apply">Apply Now</a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <h3 id="modal-title">Draft</h3>
+            <textarea id="modal-text"></textarea>
+            <button class="btn-top" style="width:100%; margin-top: 15px;" onclick="document.getElementById('modal').style.display='none'">Close</button>
+        </div>
+    </div>
+
+    <script>
+        function autoApplyTop() {
+            if(confirm("Launch bot to apply to top 5 jobs?")) {
+                fetch('/auto_apply_top', {method: 'POST'})
+                .then(res => res.json())
+                .then(data => {
+                    alert("Applied to " + data.applied + " jobs! Check 'Applied' tab.");
+                    location.reload();
+                });
+            }
+        }
+
+        function generateCoverLetter(company, title) {
+            fetch(`/generate_cover_letter/${company}/${title}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById('modal-title').innerText = "Cover Letter for " + company;
+                document.getElementById('modal-text').value = data.letter;
+                document.getElementById('modal').style.display = 'flex';
+            });
+        }
+    </script>
+</body>
+</html>
