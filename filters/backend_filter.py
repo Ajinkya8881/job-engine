@@ -1,32 +1,23 @@
 from config import BACKEND_KEYWORDS, EXCLUDE_KEYWORDS
 
 def is_backend(title):
-    if not title:
-        return False
-        
+    if not title: return False
     title_lower = title.lower()
     
-    # --- 1. Hard Excludes (HR, MBA, Sales, Communications) ---
+    # 1. Hard Excludes (No HR, No MBA, No Sales, No Success)
     for k in EXCLUDE_KEYWORDS:
-        if k in title_lower:
-            return False
+        if k in title_lower: return False
 
-    # --- 2. Required Tech Check ---
-    # The job MUST contain at least one core tech keyword.
-    # We remove "intern" from this list here so it can't pass the filter ALONE.
-    tech_keywords = [
-        "backend", "software engineer", "java", "spring", "api", 
-        "microservices", "developer", "engineer", "sde", "trainee"
-    ]
+    # 2. Tech Role Requirement
+    # A job MUST be a coding role.
+    core_roles = ["engineer", "developer", "sde", "programmer", "backend", "software", "java"]
+    is_core_tech = any(role in title_lower for role in core_roles)
     
-    is_tech = any(k in title_lower for k in tech_keywords)
-    
-    if not is_tech:
+    if not is_core_tech:
         return False
 
-    # --- 3. Final Role Match (Backend, SDE, Engineer) ---
+    # 3. Match your specific keywords
     for k in BACKEND_KEYWORDS:
-        if k in title_lower:
-            return True
+        if k in title_lower: return True
 
     return False

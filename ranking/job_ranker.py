@@ -3,44 +3,60 @@ from filters.resume_matcher import get_matched_skills
 from config import SKILLS
 
 def calculate_application_score(job):
-    desc = job.get('description', '').lower()
     title = job.get('title', '').lower()
+    desc = job.get('description', '').lower()
     loc = job.get('location', '').lower()
     
-    # --- 1. EXPERIENCE HARD FILTER (Allowed: 0-3 years) ---
-    exp_found = re.search(r"(\d+)\s*\+?\s*years", desc)
-    if exp_found:
-        years = int(exp_found.group(1))
-        if years > 3: return 0 
+    # --- 1. EXPERIENCE HARD FILTER (0-3 Years Only) ---
+    exp_patterns = [
+        r"(\d+)\s*\-\s*\d+\s*yrs", 
+        r"(\d+)\s*\+\s*years", 
+        r"(\d+)\s*to\s*\d+\s*yrs",
+        r"(\d+)\s*years?\s*exp"
+    ]
+    
+    for pattern in exp_patterns:
+        match = re.search(pattern, desc + " " + title)
+        if match:
+            years = int(match.group(1))
+            if years > 3: return 0 
+
+    if any(k in title for k in ["senior", "lead", "principal", "staff", "architect"]):
+        return 0
 
     # --- 2. SKILL INTELLIGENCE ---
-    matched = get_matched_skills(desc)
+    # Add generic tech to help entry-level roles score > 0
+    matched = get_matched_skills(desc + " " + title)
+    # Give points for 'Backend', 'API', 'REST' if found
+    for extra in ["backend", "api", "rest", "developer"]:
+        if extra in desc + " " + title and extra not in [m.lower() for m in matched]:
+            matched.append(extra.capitalize())
+            
     job['matched_skills'] = matched
     
-    # Identify Missing Skills (Skills in config NOT in desc)
-    job['missing_skills'] = [s for s in SKILLS if s.lower() not in desc]
+    # Identify Missing Skills
+    job['missing_skills'] = [s for s in ["AWS", "Kubernetes", "Docker", "Kafka", "Redis", "Microservices"] if s.lower() in desc and s.lower() not in [m.lower() for m in matched]]
 
-    # --- 3. SCORING LOGIC ---
-    # Skills are worth 10 points each
-    score = len(matched) * 10 
+    # --- 3. SCORING ---
+    skill_score = len(matched) * 10 
     
-    # Role / Fresher Bonus
-    if any(k in title for k in ["fresher", "intern", "graduate", "junior", "trainee", "sde-1", "sde-i"]):
-        score += 30
+    # Entry Level Bonus (Added 'Associate' and 'L1')
+    role_bonus = 0
+    if any(k in title for k in ["fresher", "intern", "graduate", "junior", "trainee", "sde-1", "sde-i", "associate", "engineer i"]):
+        role_bonus = 40
+    elif "sde" in title or "software engineer" in title:
+        role_bonus = 15
+
+    total_score = skill_score + role_bonus
     
-    # --- 4. PREFERENCES & BADGES ---
-    job['is_preferred_location'] = any(city.lower() in loc for city in ["hyderabad", "pune", "bangalore", "india", "gurgaon"])
+    # --- 4. PREFERENCES (Added Bengaluru) ---
+    job['is_preferred_location'] = any(city.lower() in loc for city in ["hyderabad", "pune", "bangalore", "bengaluru", "india", "gurgaon", "noida"])
     
-    # Salary Detection (LPA / Lakh / $)
     salary_match = re.search(r"(\d+)\s*(lpa|lakh|k|USD|\$)", desc)
     job['salary_est'] = salary_match.group(0) if salary_match else "N/A"
-    
-    # Visa Sponsorship Detection
-    job['visa_sponsorship'] = any(k in desc for k in ["sponsorship", "visa", "relocation", "h1b", "tier 2"])
+    job['visa_sponsorship'] = any(k in desc for k in ["sponsorship", "visa", "relocation", "h1b"])
 
-    # --- 5. BOOSTS ---
-    if job['is_preferred_location']: score += 20
-    if job['visa_sponsorship']: score += 15
-    if job['salary_est'] != "N/A": score += 10
+    if job['is_preferred_location']: total_score += 20
+    if job['visa_sponsorship']: total_score += 15
 
-    return min(100, score)
+    return min(100, total_score)
