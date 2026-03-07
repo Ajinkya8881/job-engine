@@ -59,27 +59,34 @@ def get_remoteok_jobs():
         return jobs
     except: return []
 
-def get_relocateme_jobs():
-    """Great for jobs that provide Visa Sponsorship."""
+def get_wwr_jobs():
     try:
-        # Relocate.me doesn't have a public API, but we can search for common patterns
-        # For now, we'll use a placeholder or scrape if we had selenium in CI.
-        # Since we don't, we'll stick to robust APIs.
-        return []
+        url = "https://weworkremotely.com/categories/remote-back-end-programming-jobs.json"
+        response = requests.get(url, timeout=10)
+        jobs = []
+        if response.status_code == 200:
+            data = response.json()
+            for item in data.get('jobs', []):
+                jobs.append({
+                    "company": item.get('company', 'Unknown'),
+                    "title": item.get('title', 'Unknown'),
+                    "location": "Remote",
+                    "url": item.get('url', ''),
+                    "description": item.get('description', ''),
+                    "source": "WWR"
+                })
+        return jobs
     except: return []
+
+def get_relocateme_jobs():
+    return []
 
 def get_jobspresso_jobs():
-    """High quality remote jobs."""
-    try:
-        # Jobspresso RSS
-        return [] # Placeholder for RSS logic
-    except: return []
+    return []
 
 def get_workingnomads_jobs():
-    """Back-end focus."""
     try:
         url = "https://www.workingnomads.com/jobsapi/job/_search?q=category:dev&size=50"
-        # They have a hidden API
         resp = requests.get(url, timeout=10)
         jobs = []
         if resp.status_code == 200:

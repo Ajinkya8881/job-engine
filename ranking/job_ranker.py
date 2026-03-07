@@ -49,8 +49,10 @@ def calculate_application_score(job):
 
     total_score = skill_score + role_bonus
     
-    # --- 4. PREFERENCES (Added Bengaluru) ---
-    job['is_preferred_location'] = any(city.lower() in loc for city in ["hyderabad", "pune", "bangalore", "bengaluru", "india", "gurgaon", "noida"])
+    # --- 4. PREFERENCES (Hyper-Focused India) ---
+    india_hubs = ["hyderabad", "pune", "bangalore", "bengaluru", "india", "gurgaon", "noida", 
+                  "hitech city", "gachibowli", "kondapur", "madhapur", "magarpatta", "hinjewadi", "whitefield"]
+    job['is_preferred_location'] = any(hub in loc for hub in india_hubs)
     
     salary_match = re.search(r"(\d+)\s*(lpa|lakh|k|USD|\$)", desc)
     job['salary_est'] = salary_match.group(0) if salary_match else "N/A"
