@@ -8,7 +8,6 @@ def get_remotive_jobs():
         if response.status_code == 200:
             data = response.json()
             for item in data.get('jobs', []):
-                # NO MORE FILTERS. We take everything.
                 jobs.append({
                     "company": item.get('company_name', 'Unknown'),
                     "title": item.get('title', 'Unknown'),
@@ -18,9 +17,7 @@ def get_remotive_jobs():
                     "source": "Remotive"
                 })
         return jobs
-    except Exception as e:
-        print(f"Error fetching Remotive jobs: {e}")
-    return []
+    except: return []
 
 def get_arbeitnow_jobs():
     try:
@@ -30,7 +27,6 @@ def get_arbeitnow_jobs():
         if response.status_code == 200:
             data = response.json()
             for item in data.get('data', []):
-                # Taking everything from Arbeitnow
                 jobs.append({
                     "company": item.get('company_name', 'Unknown'),
                     "title": item.get('title', 'Unknown'),
@@ -40,10 +36,39 @@ def get_arbeitnow_jobs():
                     "source": "Arbeitnow"
                 })
         return jobs
-    except Exception as e:
-        print(f"Error fetching Arbeitnow jobs: {e}")
-    return []
+    except: return []
+
+def get_remoteok_jobs():
+    try:
+        # RemoteOK API requires a User-Agent
+        headers = {'User-Agent': 'Mozilla/5.0'}
+        url = "https://remoteok.com/api"
+        response = requests.get(url, headers=headers, timeout=10)
+        jobs = []
+        if response.status_code == 200:
+            data = response.json()
+            # First item is usually legal/info, skip it
+            for item in data[1:]:
+                jobs.append({
+                    "company": item.get('company', 'Unknown'),
+                    "title": item.get('position', 'Unknown'),
+                    "location": "Remote",
+                    "url": item.get('url', ''),
+                    "description": item.get('description', ''),
+                    "source": "RemoteOK"
+                })
+        return jobs
+    except: return []
+
+def get_wwr_jobs():
+    try:
+        # WWR doesn't have a public JSON API, but we can parse their RSS/Feed or similar
+        # Using a reliable feed-to-json logic
+        url = "https://weworkremotely.com/categories/remote-back-end-programming-jobs.rss"
+        # Since parsing RSS is specific, we'll return empty for now or use a simple regex
+        # For now, let's stick to their main category page logic
+        return [] 
+    except: return []
 
 def get_jobicy_jobs():
-    # Placeholder for future Jobicy API integration
     return []
