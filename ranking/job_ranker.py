@@ -3,9 +3,9 @@ from filters.resume_matcher import get_matched_skills
 from config import SKILLS
 
 def calculate_application_score(job):
-    title = job.get('title', '').lower()
-    desc = job.get('description', '').lower()
-    loc = job.get('location', '').lower()
+    title = (job.get('title') or '').lower()
+    desc = (job.get('description') or '').lower()
+    loc = (job.get('location') or '').lower()
     
     # --- 1. EXPERIENCE HARD FILTER (0-3 Years Only) ---
     exp_patterns = [

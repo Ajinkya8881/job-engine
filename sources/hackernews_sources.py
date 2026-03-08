@@ -11,8 +11,11 @@ def get_hackernews_jobs():
         
         latest_hiring_id = None
         for story_id in stories[:5]:
-            item = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json").json()
-            if "who is hiring" in item.get('title', '').lower():
+            resp = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{story_id}.json")
+            if resp.status_code != 200: continue
+            item = resp.json()
+            if not item: continue
+            if "who is hiring" in (item.get('title') or '').lower():
                 latest_hiring_id = story_id
                 break
         
@@ -21,11 +24,18 @@ def get_hackernews_jobs():
 
         # 2. Fetch comments (job posts)
         # Only fetching top 50 for speed, can increase
-        kids = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{latest_hiring_id}.json").json().get('kids', [])
+        resp = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{latest_hiring_id}.json")
+        if resp.status_code != 200: return []
+        item_data = resp.json()
+        if not item_data: return []
+        kids = item_data.get('kids', [])
         
         for comment_id in kids[:60]: 
             try:
-                comment = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json").json()
+                resp = requests.get(f"https://hacker-news.firebaseio.com/v0/item/{comment_id}.json")
+                if resp.status_code != 200: continue
+                comment = resp.json()
+                if not comment: continue
                 text = comment.get('text', '')
                 if not text: continue
                 

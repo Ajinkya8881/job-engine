@@ -78,6 +78,25 @@ def get_wwr_jobs():
         return jobs
     except: return []
 
+def get_jobicy_jobs():
+    try:
+        url = "https://jobicy.com/api/v2/remote-jobs?count=50&category=dev"
+        response = requests.get(url, timeout=10)
+        jobs = []
+        if response.status_code == 200:
+            data = response.json()
+            for item in data.get('jobs', []):
+                jobs.append({
+                    "company": item.get('companyName', 'Unknown'),
+                    "title": item.get('jobTitle', 'Unknown'),
+                    "location": item.get('jobGeo', 'Remote'),
+                    "url": item.get('url', ''),
+                    "description": item.get('jobDescription', ''),
+                    "source": "Jobicy"
+                })
+        return jobs
+    except: return []
+
 def get_relocateme_jobs():
     return []
 

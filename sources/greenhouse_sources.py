@@ -49,7 +49,7 @@ def greenhouse_jobs():
                         detail_resp = session.get(detail_url, timeout=3)
                         if detail_resp.status_code == 200:
                             detail = detail_resp.json()
-                            description = detail.get('content', '') # HTML content
+                            description = (detail or {}).get('content', '') or title # Fallback if content is None
                         else:
                             description = title # Fallback
                     except:

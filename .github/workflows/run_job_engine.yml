@@ -29,12 +29,12 @@ jobs:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
       run: |
-        python main.py --run-once
+        python3 main.py --run-once
 
     - name: Commit & Push New Jobs
       run: |
         git config --global user.name "JobBot"
         git config --global user.email "bot@github.com"
-        git add storage/seen_jobs.txt storage/jobs_db.json
+        git add -f storage/seen_jobs.txt storage/jobs_db.json
         git commit -m "Auto-update jobs [skip ci]" || echo "No changes to commit"
         git push

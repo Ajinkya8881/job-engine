@@ -60,8 +60,10 @@ def run_engine():
     all_jobs.extend(get_remotive_jobs())
     print("[2/7] Fetching Arbeitnow...")
     all_jobs.extend(get_arbeitnow_jobs())
-    print("[3/7] Fetching RemoteOK...")
+    print("[3/7] Fetching RemoteOK, Jobicy, WWR...")
     all_jobs.extend(get_remoteok_jobs())
+    all_jobs.extend(get_jobicy_jobs())
+    all_jobs.extend(get_wwr_jobs())
     
     # 2. Tech Sources
     print("[4/7] Fetching GitHub Job Trackers...")
@@ -82,12 +84,15 @@ def run_engine():
     new_jobs_count = 0
 
     for job in all_jobs:
-        if 'description' not in job: job['description'] = ""
-        if 'url' not in job: job['url'] = ""
+        if not job: continue
+        if job.get('description') is None: job['description'] = ""
+        if job.get('url') is None: job['url'] = ""
+        if job.get('title') is None: job['title'] = "Unknown"
+        if job.get('company') is None: job['company'] = "Unknown"
         
         if is_backend(job.get("title", "")):
             from filters.resume_matcher import get_matched_skills
-            job['matched_skills'] = get_matched_skills(job.get('description', ''))
+            job['matched_skills'] = get_matched_skills(job.get('description') or '')
             score = calculate_application_score(job)
             job['score'] = score
             if 'status' not in job: job['status'] = 'new'
