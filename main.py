@@ -107,8 +107,12 @@ def run_engine():
                 seen.add(job_id)
 
     print(f"Matched: {len(processed_jobs)} | New Alerts: {new_jobs_count}")
+    
+    print("Saving seen jobs...")
     save_seen(seen)
+    print("Saving jobs database...")
     save_jobs_db(processed_jobs)
+    print("Scan complete.")
 
 schedule.every(10).minutes.do(run_engine)
 
