@@ -52,6 +52,17 @@ def generate_cover_letter(company, title):
               f"Best regards,\n{RESUME_DATA['first_name']} {RESUME_DATA['last_name']}\n{RESUME_DATA['linkedin']}")
     return jsonify({"letter": letter})
 
+@app.route('/generate_referral/<company>/<title>')
+def generate_referral(company, title):
+    text = (f"Hi [Name],\n\n"
+            f"I hope you're doing well! I saw that {company} is hiring for a {title} role, "
+            f"and I'm very interested. Given my background in Java and Backend development, "
+            f"I believe I'd be a great fit. Would you be open to sharing a referral link or "
+            f"passing my resume to the hiring team?\n\n"
+            f"Happy to chat more if you have a moment. Thanks!\n\n"
+            f"Best,\n{RESUME_DATA['first_name']} {RESUME_DATA['last_name']}")
+    return jsonify({"text": text})
+
 @app.route('/interview_prep/<role>')
 def interview_prep(role):
     questions = ["Working of HashMap", "Spring Bean Lifecycle", "Microservices Saga Pattern", "SQL vs NoSQL"]

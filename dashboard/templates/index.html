@@ -70,10 +70,12 @@
                             <div class="match-list"><b>✅ YOUR SKILLS:</b> {{ job.matched_skills|join(', ') if job.matched_skills else 'None' }}</div>
                             {% if job.missing_skills %}<div class="missing-list"><b>⚠️ REQUIRED BY JOB:</b> {{ job.missing_skills|join(', ') }}</div>{% endif %}
                         </div>
-                        <div class="actions" style="grid-template-columns: 1fr 1fr;">
-                            <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Draft Letter</button>
-                            <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Prep</button>
-                            <a href="{{ job.url }}" target="_blank" class="btn btn-apply">APPLY LINK</a>
+                        <div class="actions">
+                            <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Cover Letter</button>
+                            <button class="btn" onclick="generateReferral('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">🤝 Referral Draft</button>
+                            <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Interview Prep</button>
+                            <button class="btn" onclick="findRecruiter('{{ job.company|replace("'", "\\'") }}')">🔵 Find Recruiter</button>
+                            <a href="{{ job.url }}" target="_blank" class="btn btn-apply" style="grid-column: span 1;">APPLY LINK</a>
                             <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
                             <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
                         </div>
@@ -97,10 +99,12 @@
                         <div class="match-list"><b>✅ YOUR SKILLS:</b> {{ job.matched_skills|join(', ') if job.matched_skills else 'None' }}</div>
                         {% if job.missing_skills %}<div class="missing-list"><b>⚠️ REQUIRED BY JOB:</b> {{ job.missing_skills|join(', ') }}</div>{% endif %}
                     </div>
-                    <div class="actions" style="grid-template-columns: 1fr 1fr;">
-                        <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Draft Letter</button>
-                        <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Prep</button>
-                        <a href="{{ job.url }}" target="_blank" class="btn btn-apply">APPLY LINK</a>
+                    <div class="actions">
+                        <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Cover Letter</button>
+                        <button class="btn" onclick="generateReferral('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">🤝 Referral Draft</button>
+                        <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Interview Prep</button>
+                        <button class="btn" onclick="findRecruiter('{{ job.company|replace("'", "\\'") }}')">🔵 Find Recruiter</button>
+                        <a href="{{ job.url }}" target="_blank" class="btn btn-apply" style="grid-column: span 1;">APPLY LINK</a>
                         <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
                         <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
                     </div>
@@ -169,6 +173,10 @@
                 body: JSON.stringify({ company, title, status })
             }).then(() => location.reload());
         }
+        function findRecruiter(company) {
+            const query = encodeURIComponent(`Talent Acquisition Recruiter Engineering lead ${company}`);
+            window.open(`https://www.linkedin.com/search/results/people/?keywords=${query}`, '_blank');
+        }
         function generateCoverLetter(company, title) {
             fetch(`/generate_cover_letter/${encodeURIComponent(company)}/${encodeURIComponent(title)}`)
             .then(res => res.json()).then(data => {
@@ -177,6 +185,17 @@
                 const a = document.createElement('a');
                 a.href = url;
                 a.download = `Cover_Letter_${company.replace(/\s+/g, '_')}.txt`;
+                a.click();
+            });
+        }
+        function generateReferral(company, title) {
+            fetch(`/generate_referral/${encodeURIComponent(company)}/${encodeURIComponent(title)}`)
+            .then(res => res.json()).then(data => {
+                const blob = new Blob([data.text], { type: 'text/plain' });
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `Referral_Request_${company.replace(/\s+/g, '_')}.txt`;
                 a.click();
             });
         }
