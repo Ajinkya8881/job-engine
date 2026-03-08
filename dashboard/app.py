@@ -22,7 +22,7 @@ def save_jobs(jobs):
 @app.route('/')
 def index():
     all_jobs = load_jobs()
-    dashboard_data = {"new": [], "applied": [], "interview": [], "offer": [], "rejected": []}
+    dashboard_data = {"new": [], "applied": [], "ignored": [], "interview": [], "offer": [], "rejected": []}
     for job in all_jobs:
         status = job.get('status', 'new')
         if status in dashboard_data: dashboard_data[status].append(job)

@@ -33,6 +33,7 @@
         .btn:hover { background: #334155; color: #fff; }
         .btn-apply { background: var(--primary); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
         .btn-save { background: var(--accent); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
+        .btn-ignore { background: var(--danger); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
         .badge { font-size: 0.7em; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
         .badge-visa { background: rgba(56, 189, 248, 0.2); color: var(--primary); }
         .badge-salary { background: rgba(250, 204, 21, 0.2); color: var(--warning); }
@@ -48,6 +49,7 @@
     <div class="tabs">
         <div class="tab active" onclick="switchTab('new-tab')">New Jobs ({{ data.new|length }})</div>
         <div class="tab" onclick="switchTab('applied-tab')">Applied ({{ data.applied|length }})</div>
+        <div class="tab" onclick="switchTab('ignored-tab')">Ignored ({{ data.ignored|length }})</div>
     </div>
 
     <!-- NEW JOBS TAB -->
@@ -73,6 +75,7 @@
                             <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Prep</button>
                             <a href="{{ job.url }}" target="_blank" class="btn btn-apply">APPLY LINK</a>
                             <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
+                            <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
                         </div>
                     </div>
                 {% endfor %}
@@ -99,6 +102,7 @@
                         <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Prep</button>
                         <a href="{{ job.url }}" target="_blank" class="btn btn-apply">APPLY LINK</a>
                         <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
+                        <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
                     </div>
                 </div>
                 {% endfor %}
@@ -125,11 +129,27 @@
                     </div>
                 {% endfor %}
                 </div>
-                {% if data.applied|length == 0 %}
-                    <div style="color:var(--secondary); padding: 40px; text-align: center; background: var(--card-bg); border-radius: 12px; border: 1px dashed #334155;">
-                        No applications tracked yet. Start applying!
+            </div>
+        </div>
+    </div>
+
+    <!-- IGNORED JOBS TAB -->
+    <div id="ignored-tab" class="tab-content">
+        <div class="main-container">
+            <div class="column" style="grid-column: span 2;">
+                <div class="column-header">✖ Ignored / Broken Roles</div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                {% for job in data.ignored %}
+                    <div class="job-card" style="opacity: 0.6;">
+                        <h2>{{ job.title }}</h2>
+                        <div class="company">{{ job.company }}</div>
+                        <div class="loc">📍 {{ job.location }}</div>
+                        <div class="actions">
+                            <button class="btn" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'new')">🔄 Restore to New</button>
+                        </div>
                     </div>
-                {% endif %}
+                {% endfor %}
+                </div>
             </div>
         </div>
     </div>
