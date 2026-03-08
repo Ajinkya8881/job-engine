@@ -10,10 +10,14 @@ on:
 jobs:
   scan-jobs:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Code
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Set up Python
       uses: actions/setup-python@v4
@@ -36,5 +40,9 @@ jobs:
         git config --global user.name "JobBot"
         git config --global user.email "bot@github.com"
         git add -f storage/seen_jobs.txt storage/jobs_db.json
-        git commit -m "Auto-update jobs [skip ci]" || echo "No changes to commit"
-        git push
+        if [ -n "$(git status --porcelain)" ]; then
+          git commit -m "Auto-update jobs [skip ci]"
+          git push origin main
+        else
+          echo "No changes to commit"
+        fi
