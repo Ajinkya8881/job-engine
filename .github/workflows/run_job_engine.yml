@@ -42,6 +42,7 @@ jobs:
         git add -f storage/seen_jobs.txt storage/jobs_db.json
         if [ -n "$(git status --porcelain)" ]; then
           git commit -m "Auto-update jobs [skip ci]"
+          git pull --rebase origin main
           git push origin main
         else
           echo "No changes to commit"
