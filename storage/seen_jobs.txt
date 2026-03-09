@@ -1,515 +1,517 @@
-stripe_Software Engineer, Intern (Summer)
-palantir_Ceph Infrastructure Engineer
-fampay_Flutter Engineer (2-4 Years)
-okta_Solution Engineer, SLED
-twilio_Software Engineer Intern - United States
-scaleai_Machine Learning Research Engineer, GenAI Applied ML
-datadog_Federal Support Engineer 2 - Denver
-palantir_Forward Deployed Enablement Engineer - Customer Success
-stripe_Backend / API Engineer, Revenue Foundations
-meesho_Software Development Engineer - IV - Backend
-stripe_Backend Engineer, Developer Experience & Product Platform 
-gitlab_Professional Services Engineer, UKI
-palantir_Forward Deployed Software Engineer - US Government
-scaleai_Site Reliability Engineer / DevOps
-scaleai_Solutions Engineer, Robotics
-palantir_Forward Deployed Engineer - Mixed Reality
-instacart_Analytics Engineer, Lifecycle Efficiency
-dropbox_Data Science Engineer Intern (Summer 2026)
-scaleai_Software Engineer, Robotics
-palantir_Product Reliability Engineer - Defense
-We at Avride are hiring in Austin for a full-time,_Software Engineer (HN)
-stripe_Backend Engineer, Core Tech, Canada
-Nebulab_Shopify Engineer
-fampay_SDE 2
-tripactions_Sr. Application Systems Engineer
-palantir_Backend Software Engineer
-palantir_Software Engineer, Internship - Defense Tech
-palantir_Forward Deployed Software Engineer - Korea Forward Deployed
-twilio_Developer Evangelist
-scaleai_Software Engineering Intern (Summer 2026) 
-gusto_GTM Analytics Engineer
-palantir_Embedded People Engineer
-scaleai_Machine Learning Research Scientist / Engineer, Reasoning
-Duolingo _Software Engineer (HN)
-stripe_Enterprise Integration Engineer
-Rivet _Software Engineer (HN)
-okta_Solutions Engineer, Alliances
-phonepe_Software Engineer (5-7 Yrs) - Core
-palantir_Forward Deployed Software Engineer - Warp Speed
-asana_Software Engineer, Data Infrastructure 
-Ilias Vassiliou  & Team  headhunter.digital im Auftrag_IT Support Engineer - Apple / macOS / IT-Infrastruktur (Frankfurt am Main) *
-figma_Security Engineer
-palantir_Incident Management Engineer
-Kroo _Software Engineer (HN)
-palantir_Software Engineer - Developer Productivity
-palantir_Forward Deployed Software Engineer
-dropbox_ServiceNow Engineer
-scaleai_Security Engineer, Infrastructure & Security
-scaleai_ML Systems Engineer, Robotics
-DeepL _Software Engineer (HN)
-phonepe_Software Engineer - Backend (7-10 Years)
-gitlab_Backend Engineer, Knowledge Graph (Rust)
-phonepe_Site Reliability Engineer 3
-Silkline _Software Engineer (HN)
-twilio_Software Engineer (L3)
-palantir_Software Engineer, Internship - Production Infrastructure
-Ford Motor Company _Software Engineer (HN)
-Head of Engineering &amp; Infrastructure _Software Engineer (HN)
-tripactions_Sr. Cloud Security Engineer
-coinbase_Software Engineer, Backend (Consumer - Advanced Trading)
-discord_Software Engineer - Realtime Infrastructure
-Collective Intelligence Project _Software Engineer (HN)
-stripe_Software Engineer, Money as a Service
-checkr_Security Engineer
-VLM Run (<a href="https://vlm.run" rel="nofollow">_Software Engineer (HN)
-twilio_Personalized Support Engineer 2
-asana_Software Engineering Intern - Summer 2026 (Reykjavik)
-datadog_GenAI Software Engineer
-faire_IT Support Engineer
-checkr_Software Engineer II
-meesho_Security Engineer IV
-okta_Solution Engineer 
-stripe_Forward Deployed Engineer, Professional Services
-stripe_Integration Engineer (Japan)
-figma_Software Engineer, Machine Learning
-datadog_AI Research Engineer - Datadog AI Research (DAIR)
-Upvest GmbH _Software Engineer (HN)
-pinterest_Sr. Security Software Engineer, Application Security
-flexport_Software Engineer I (Generalist)
-flexport_Software Development Engineer I, SMB
-palantir_Software Engineer, New Grad - Production Infrastructure
-Dr. Ansay Ltd._Working Student AI Engineering (m/f/d) - Berlin & Remote
-airtable_Web Developer
-datadog_Enablement Systems Engineer
-coinbase_Software Engineer, Full Stack (EAA)
-Lithic (<a href="https://lithic.com" rel="nofollow_Software Engineer (HN)
-stripe_Design Engineer, Expansion
-discord_Software Engineer, Data Platform
-scaleai_AI Infrastructure Engineer, Model Serving Platform
-palantir_Information Security Engineer
-acemate.ai_Product / Growth Engineer (Working Student)
-phonepe_Software Engineer, Backend (5-7) -  BFSI 
-coinbase_Software Engineer, Developer (Wallets and Onchain Tools) 
-affirm_Software Engineer I, Back-end (Collections)
-reddit_Software Engineer
-palantir_Software Engineer - Edge
-Mento_Data Engineer
-reddit_Machine Learning Engineer, Search and Answers
-palantir_Backend Software Engineer - Infrastructure
-asana_Solutions Engineer
-airtable_Data Engineer
-scaleai_Field Engineer, Public Sector
-stripe_Software Engineer, Bridge
-Large Space Structures GmbH_Requirements and Verification Systems Engineer
-Lead Full-Stack Engineer
-Marker Learning _Software Engineer (HN)
-Deducta _Software Engineer (HN)
-scaleai_Software Engineer, Platform
-Protillion Biosciences _Software Engineer (HN)
-Sesame _Software Engineer (HN)
-phonepe_Site Reliability Engineer - Azure (4-8yrs)
-pagerduty_Site Reliability Engineer II
-figma_Software Engineer Intern, Developer Tools (2026) (London, United Kingdom)
-flexport_Software Engineer II (Commerce)
-tripactions_Client Platform Engineer
-palantir_Forward Deployed Software Engineer - Tactical Edge
-gitlab_Customer Success Engineer, Digital 
-brex_Software Engineer II, Operational AI
-figma_Software Engineer, Full Stack
-okta_Infrastructure Support Engineer - Customer Acceleration
-scaleai_Software Engineer, Infrastructure & Security
-okta_Sr Solutions Engineer - Japan
-Anduril Industries_Early Career Software Engineer Warfighter Systems
-palantir_Full Stack Software Engineer - Application Development
-scaleai_Machine Learning Engineer, International Public Sector
-stripe_Design Engineer, Presence
-checkr_Backend Software Engineer II
-palantir_Platform Intelligence Engineer
-checkr_Python Engineer, Truework
-twilio_Software Engineer Intern - Canada
-stripe_Full Stack Engineer, Enterprise & Ecosystem
-Proton VPN (<a href="https://protonvpn.com/" rel="_Software Engineer (HN)
-airtable_Software Engineer, Product Backend (2-8 YOE)
-dropbox_Support Enablement Engineer Intern  (Summer 2026)
-stripe_Software Engineer, Core Technology
-twilio_Applications Engineer 2
-gitlab_Intermediate Site Reliability Engineer, Environment Automation
-Ardent AI _Software Engineer (HN)
-scaleai_Machine Learning Research Engineer - Robotics
-affirm_Software Engineer II, Backend (AI Agents)
-flexport_Software Engineer Ⅰ, Forwarding Tech - Commerce
-pinterest_Sr. Security Software Engineer, Internal Identity & Access Management
-scaleai_Infrastructure Software Engineer, Enterprise GenAI
-stripe_Backend Engineer, Data
-robinhood_Software Developer Intern, Backend (Summer 2026)
-scaleai_Mission Software Engineer, Public Sector
-twitch_Software Engineer I
-dropbox_Infrastructure Software Engineer, Data Platform
-<i>Stellar Science</i> _Software Engineer (HN)
-robinhood_Software Engineer, Backend
-instacart_Software Engineer II
-flexport_Software Engineer II (Generalist)
-Clipster _Software Engineer (HN)
-gitlab_Customer Success Engineer - APJ
-okta_Solutions Engineer - Auth0
-pinterest_Machine Learning Engineer, tvScientific
-phonepe_Site Reliability Engineer 2
 stripe_Backend / API Engineer, Payouts
-robinhood_Analytics Engineer
-scaleai_Robotics Engineer
-CodSpeed _Software Engineer (HN)
-phonepe_Site Reliability Engineer 2 - Network Operations Engineer (Bangalore)
-palantir_Forward Deployed Reliability Engineer
-Sezzle_AI Engineer I
-paytm_Business Analyst - Process Re-Engineering
-gitlab_Intermediate Site Reliability Engineer, Tenant Scale: Tenant Services
-twitch_Software Engineer, Safety ML
-River _Software Engineer (HN)
-palantir_Compliance Engineer
-figma_Software Engineer, Production Engineering  (London, United Kingdom)
-gitlab_Support Engineer, U.S. Government Support
-palantir_Backend Software Engineer - Application Development
-stripe_SaaS Operations Engineer
-phonepe_Software Engineer (5-7 years) 
-scaleai_Solutions Engineer (Clearance Required)
-figma_Software Engineer, Growth & Monetization
-datadog_Premier Support Engineer 2 - New York
-flexport_Software Engineer Ⅰ, Forwarding App
-stripe_Software Engineer, Intern
-stripe_Broadcast Engineer
-phonepe_Service Delivery Engineer, SRE
-affirm_Software Engineer II, Backend (Credit Decisioning) 
-palantir_Forward Deployed Software Engineer - Japan Forward Deployed
-asana_Corporate Security Engineer
-Accenture Federal Services_Cloud Systems Engineer
-figma_Software Engineer, Backend - Figma Weave (Tel Aviv, Israel) 
-paytm_EM - Backend ( Insurance )
-palantir_Forward Deployed Software Engineer, New Grad - Commercial
-pinterest_Machine Learning Engineer, Core Engineering
-Marker Learning _Software Engineer (HN)
-stripe_Software Engineer, Data Orchestration
-twitch_Software Engineer I, Twitch Chat
-faire_Intermediate Backend Engineer
-flexport_Software Engineer II, AI Platform
-stripe_Backend Engineer, Core Technology
-scaleai_ Machine Learning Research Engineer, Agent Data Foundation - Enterprise GenAI
-scaleai_Forward Deployed Engineer, GenAI 
-dropbox_Poland Software Engineering Intern (Summer 2026)
-tripactions_Sr. Backend Software Engineer, Fraud Risk Platform
-pinterest_Sr. Machine Learning Engineer, Ads Ranking 
-acoris AG_Developer (m/w/d) - Schwerpunkt Power Platform
-palantir_Forward Deployed AI Engineer
-twilio_Software Engineer (L2)
-phonepe_Site Reliability Engineer - Big Data (7 to 11 years)
-robinhood_Quality Engineer, Options
-meesho_Security Engineer -1
-stripe_Software Engineer, Internal Systems
-datadog_Technical Escalations Engineer 2 (APM) - EMEA
-figma_Software Engineer, AI Platforms
-dropbox_Atlassian Cloud Platform Engineer
-flexport_Software Engineer Ⅱ, Forwarding Tech - Commerce
-okta_ServiceNow UX Developer
-palantir_Mixed Reality Developer
-stripe_Software Engineer, Experimental Projects
-reddit_Backend Engineer, Feeds Experience
-robinhood_Web Engineer
-stripe_Backend Engineer, Payments and Risk
-EVIDENT Europe GmbH_Setup Developer (m/f/d)
-okta_Solutions Engineer
-stripe_Software Engineer, Machine Learning Infrastructure
-affirm_Software Engineer I, Full Stack (Consumer Engineering)
-discord_Rust/C++ Software Engineer
-palantir_Software Engineer, Internship
-stripe_Full Stack Engineer, Payments and Risk
-twilio_Technical Support Engineer 
-MEMX_DevOps Engineer
-discord_Data Engineer, Analytics
-AutoDS_Backend Developer
-twilio_Cloud Software Engineer
-palantir_Forward Deployed Software Engineer, Internship - US Government
-scaleai_Software Engineer, Full Stack – Scale GP
-figma_Software Engineer, Production Engineering
-twitch_Software Development Engineer, Money
-affirm_Software Engineer II, Backend (PMI Integrations)
-affirm_Software Engineer II, Backend (Consumer Engineering)
-OpenRent _Software Engineer (HN)
-gitlab_Customer Success Engineer, EMEA
-Foxglove _Software Engineer (HN)
-figma_Software Engineer, C++
-instacart_Machine Learning Engineer II, Economics
-stripe_Software Engineer, Data & AI
-palantir_Software Engineer - Defense Applications
-dropbox_Infrastructure Software Engineer
-Instinct Science _Software Engineer (HN)
-coinbase_Security Engineer, CorpSec
-Careforce AI (aka Helpcare) _Software Engineer (HN)
-palantir_Software Engineer, New Grad - Infrastructure
-PermitFlow (YC W22) _Software Engineer (HN)
-pinterest_Sr. Software Engineer, Full Stack
-LiveEO _Software Engineer (HN)
-tripactions_Application Systems Engineer
-stripe_Backend Engineer/API, Payments and Risk
-paytm_Revenue Assurance -Process Re-Engineering
-pinterest_Software Engineering Intern 2026 (Mexico City)
-slice_Software Developer, Services
-We have multiple openings for: QA Engineers, Go En_Software Engineer (HN)
-palantir_Web Application Developer - Defense
-stripe_Software Engineer, Money Movement 
-Brico (Series A) _Software Engineer (HN)
-okta_Developer Support Engineer
-asana_Software Engineer, Backend
-IT42morrow IFT GmbH_Fullstack-Entwickler Java (m/w/d)
-brex_Software Engineer, Internship - 2026
-twitch_Undergrad Software Engineering Intern
-gitlab_CPQ Developer 
-tripactions_Sr. Backend Software Engineer
-stripe_Integration Reliability Engineer, Technical Operations
-Schema Labs (OpenCouncil) _Software Engineer (HN)
-twitch_Software Engineer, Creator Monetization
-brex_Software Engineer II, Activation
-coinbase_Software Engineer (Institutional - Tokenization)
-stripe_Full Stack Engineer, Expansion
-airtable_Software Engineer, Infrastructure (2-8 YOE)
-phonepe_Site Reliability Engineer 3 - Network Operations - Pune
-robinhood_Software Backend Engineer, Credit Cards & Banking Platform
-twilio_Software Engineer Intern (June start, Remote-Ireland)
-dropbox_Machine Learning Engineer, Dash
-Herakles Defense _Software Engineer (HN)
-datadog_Technical Curriculum Developer - Security
-palantir_Forward Deployed Software Engineer - France Government
-scaleai_Applied AI Engineer, International Public Sector
-palantir_Forward Deployed Software Engineer - Japan Government
-datadog_Premier Support Engineer 2
-robinhood_Software Engineer, Streaming Platform
-dropbox_Network Engineer
-acemate.ai_Full-Stack Developer (Working Student)
-twitch_Software Engineer I - Ads Demand Enablement
-Apple _Software Engineer (HN)
-okta_Solutions Engineer- SLED
-phonepe_Site Reliability Engineer - Systems (4-8 years)
-coinbase_Software Engineer - Full Stack (EAA - Compliance)
-pinterest_Sr. Software Engineer, tvScientific
-OneChronos _Software Engineer (HN)
-palantir_Systems Engineer - Business Systems
-pinterest_Sr. Backend Engineer, tvScientific
-asana_Junior Software Engineer
-asana_Software Engineer
-palantir_Software Engineer - Apollo Platform
-datadog_Technical Support Engineer 2
-figma_Software Engineer, Distributed Systems
-scaleai_Applied AI Engineer, Enterprise GenAI
-affirm_Software Engineer II, Backend (Identity Decisioning)   
-coinbase_Client Integration Engineer (Trading Systems)
-palantir_Software Engineer, New Grad
-figma_Software Engineer, AI Product
-stripe_Software Engineer, Product Security Data Platforms
-scaleai_DevOps Engineer, IPS
-affirm_Software Engineer II, Backend (Fraud)
-asana_Software Engineer, Reykjavik
-stripe_Full Stack Engineer, Risk & Support
-scaleai_Applied AI Engineer, Enterprise
-palantir_Forward Deployed Software Engineer - Autonomous Systems C2
-pinterest_Sr. Machine Learning Engineer, Notifications
-BitMEX_Growth Engineer
-stripe_Integration Reliability Engineer, Technical Operations, Commerce Systems
-airbnb_Software Engineer, Infrastructure
-pinterest_Machine Learning Engineer, Monetization Engineering
-Arboreal Management / Great Expectations _Software Engineer (HN)
-coinbase_Software Engineer
-stripe_Security Engineer, Bridge
-AI startup (stealth) _Software Engineer (HN)
-CiceroAI _Software Engineer (HN)
-figma_Software Engineer, Fullstack - Figma Weave (Tel Aviv, Israel) 
-QuoIntelligence _Software Engineer (HN)
-scaleai_Software Engineer, Gen AI
-Rubin Observatory / SLAC _Software Engineer (HN)
-palantir_UKG Compliance Engineer
-scaleai_AI Infrastructure Engineer, Core Infrastructure
-stripe_Machine Learning Engineer, Payments ML Accelerator
-stripe_Software Engineer,Service Ecosystem Sustainability 
-palantir_Forward Deployed Software Engineer - Intel
-GiB - Gesundheit in Bewegung GmbH_Full-Stack Web Developer (m/w/d) in Vollzeit
-palantir_Software Engineer, Internship - Infrastructure
-stripe_Security Engineer, New Grad 
-stripe_Full Stack Engineer, Web Presence and Platform
-phonepe_Software Engineer - Backend (5-7 years), Pune
 yeet _Software Engineer (HN)
-datadog_Technical Escalations Engineer 3 (Internal Developer Portal) - US-East
-coinbase_Machine Learning Engineer Intern
-pinterest_Sr. Machine Learning Engineer, Monetization Engineering
-Sage _Software Engineer (HN)
-airtable_Software Engineer, Compute (8+ YOE)
-stripe_Software Engineer, Payments
-scaleai_Software Engineer, Robotics & Autonomous Systems
-affirm_Software Engineer II, Full-Stack (Card Acquisition)
-brex_Software Engineer II, Product 
-asana_Security Engineer, Red Team 
-airtable_Software Engineer, Observability
-stripe_Software Engineer, Payments & Risk
-flexport_Software Engineer II, Forwarding Tech - Commerce, Planning, Procurement
-figma_Software Engineer, Graphics & Media
-okta_Sr Software Engineer - Data Platform
-stripe_Software Engineer, Secrets Infrastructure
-palantir_Forward Deployed Infrastructure Engineer - US Government
-palantir_Backend Software Engineer - Defense
-asana_Security Engineer, Detection Engineering
-dropbox_Fullstack Product Software Engineer
-scaleai_Solutions Engineer, Enterprise
-flexport_Software Engineer I, Forwarding App
-okta_Solutions Engineer, Auth0
-gitlab_Intermediate Support Engineer (AMER - PST / MST)
-QuiverAI _Software Engineer (HN)
-Hi HN — I’m Nicole, cofounder of Gambit Robotics (_Software Engineer (HN)
-datadog_Premier Support Engineer 3 - NYC
-SF Sauna -- SF Bay Area_Software Engineer (HN)
-paytm_Backend SSE- Dot net Engineer  ( For Nayara )
-stripe_Developer Experience Engineer, Privy
-stripe_Software Engineering, New Grad
-palantir_Forward Deployed Software Engineer, New Grad - UK Government
-stripe_Technical Solutions Engineer
-stripe_Machine Learning Engineer, Stripe Assistant 
-Coder _Software Engineer (HN)
-airtable_Product Security Engineer
-stripe_Integration Engineer 
-stripe_Forward Deployed Engineer, Privy
-phonepe_Software Engineer -Symphony (5-7)
-palantir_Forward Deployed Software Engineer - AUS Government
-Justhome GmbH_Full Stack Developer (m/w/d)
-affirm_Software Engineer I, Early Career Program
-Paymentology_Cloud Engineer
-affirm_Software Engineer I, Backend (Consumer Engineering) 
-Lead Full-Stack Engineer
-airbnb_Business Solutions Engineer, (Agentic AI)
-pinterest_ Software Engineer II, Full Stack
-airtable_Software Engineer, Product Backend (8+ YOE)
-dropbox_Full Stack Software Engineer, Dash Experiences
-coinbase_Software Engineer - Customer Agent Interactions System
-coinbase_Software Engineer Intern
-tripactions_Fullstack Software Engineer
-asana_Software Engineer, Product
-Endo Health GmbH_AI-Solutions Engineer (m/w/d)
-scaleai_Software Engineer, Enterprise
-gitlab_Intermediate Backend (Go) Engineer, Gitlab Delivery -Operate
-JustPark _Software Engineer (HN)
-Chainguard_Technical Support Engineer EMEA
-Digital Health Strategies _Software Engineer (HN)
-dropbox_Full Stack Product Software Engineer
-twitch_Software Engineer, ML Products
-stripe_Backend/API Engineer, Money as a Service
-asana_Fullstack Software Engineer, Reykjavik
-Fronted AS_Product Engineer
-airtable_Professional Services Engineer (East Coast)
-Arcol _Software Engineer (HN)
-datadog_AI Research Engineer – Datadog AI Research (DAIR)
-palantir_Software Engineer - Environment Platform
-acemate.ai_Intern - Full-Stack Developer
-Softmax _Software Engineer (HN)
-stripe_Integration Engineer, Professional Services
-pinterest_Sr. Data Engineer, tvScientific
-scaleai_Machine Learning Systems Research Engineer, Agent Post-training - Enterprise GenAI
-dropbox_Infrastructure Software Engineer, API Platform
-okta_Site Reliability Engineer (Auth0)
-IT42morrow IFT GmbH_DevOps-Engineer (m/w/d)
-scaleai_Software Engineer - New Grad
-palantir_Software Engineer - Apollo Systems
-palantir_Support Engineer - US Government
-coinbase_Site Reliability Engineer, IT Infrastructure
-datadog_Federal Support Engineer 3 - Denver, New York
-Deep Systems _Software Engineer (HN)
-asana_Software Engineering Intern - Summer 2026 (Warsaw)
-Radar Labs _Software Engineer (HN)
-scaleai_AI Research Engineer, Enterprise Evaluations
-asana_Fullstack Developer
-Runpod, Inc._Forward Deployed Engineer
-dropbox_Fullstack Product Software Engineer, DocSend
-scaleai_ML Research Engineer, ML Systems
-airtable_Software Engineer, Infrastructure (8+ YOE)
-We’re a start-up company, we are building a local-_Software Engineer (HN)
-Zed Industries _Software Engineer (HN)
-discord_Software Engineer, Ads
-tripactions_Sr Software Engineer;Global tools and integrations
-stripe_Backend Engineer, Forward Deployed Engineering
-twitch_Software Engineer, ML
-datadog_Container Runtime Engineer
-palantir_Software Engineer - Infrastructure, Foundry Platform
-okta_Distinguished Solution Engineer, Key Accounts (Central U.S.)
-flexport_Software Engineer II, Import Team
-Charge Robotics _Software Engineer (HN)
-affirm_Software Engineer, Backend (Marketplace Performance)
-checkr_Sr. Software Engineer
-figma_Software Engineer - Figma Weave (Tel Aviv, Israel)
-affirm_Software Engineering Intern - Summer 2026
-scaleai_Distinguished Engineer
-Confido Legal _Software Engineer (HN)
-stripe_Backend Engineer, UI Services
-dropbox_Infrastructure Software Engineer, Data Observability
-scaleai_Machine Learning Research Engineer, Agents - Enterprise GenAI
-affirm_Software Engineer II, Backend (Credit Decisioning)
-Ashby _Software Engineer (HN)
-stripe_Full Stack Engineer, Link
-gitlab_Customer Success Engineer
-pinterest_Sr. Machine Learning Engineer, Core Engineering 
-datadog_Technical Support Engineer 1 - 2
-Blueberry Pediatrics _Software Engineer (HN)
-flexport_Software Engineer II, Forwarding App
-flexport_Software Engineer II, Customs
-pinterest_Sr. Software Engineer, Backend
-FUTO _Software Engineer (HN)
-coinbase_Software Engineer, DevSec
-phonepe_Software Engineer(Backend) -  Merchant (5 to 7 years)
-okta_Solutions Engineer, Auth0 (Central/West USA)
-We're building AI that predicts whether a wounded _Software Engineer (HN)
-figma_Data Engineer
-affirm_Software Engineer II, Backend (Affirm Card)
-asana_Software Engineer, CI/CD
-cigus GmbH_Embedded Software Developer (m/w/d)
-figma_Software Engineer, Translations Platform
-palantir_Software Engineer - Core Interfaces
-pinterest_Sr. Machine Learning Engineer, tvScientific
-stripe_Software Engineer, New Grad
-datadog_Technical Support Engineer 2, Premier - EMEA
-twitch_Software Engineer
-scaleai_Software Engineer, Enterprise AI
-Roblox _Software Engineer (HN)
-twilio_Technical Support Engineer 2
-NOXON_Junior Product Engineer Wearables (Full Time) Munich, Germany
-Tangled _Software Engineer (HN)
-Pomelo Care_Software Engineer
-okta_Solutions Engineer - Italy
-brex_Data Engineer
-scaleai_Security Engineer, Product Security
-stripe_Full Stack Engineer, Money as a Service
-palantir_Forward Deployed Software Engineer - UK Government
-pinterest_Machine Learning Engineer II
-coinbase_Software Engineer, EAA Integrations
-checkr_Support Engineer
-affirm_Software Engineer, Early Career
-stripe_Full Stack Engineer, Developer Experience & Product Platform
-gitlab_Associate Support Engineer (AMER - PST / MST)
-okta_Solutions Engineer, Okta 
-stripe_Backend / API Engineer, Privacy Products
-gitlab_Intermediate Backend Engineer, Verify: Runner Core
-palantir_Privacy and Civil Liberties Software Engineer
-palantir_Systems Engineer - Microsoft 365
-palantir_Application Security Engineer
-robinhood_Software Developer, Data Engineering
-stripe_Solutions Engineer, Bridge
-dropbox_Full-Stack Product Software Engineer, Search Platform
-pinterest_Sr. ML Ops Engineer, tvScientific
-asana_Audio Visual Engineer
 Shorebird _Software Engineer (HN)
-scaleai_Machine Learning Research Scientist / Research Engineer, Post-Training
-meesho_Software Development Engineer III -Backend
-phonepe_Software Engineer - Backend (3-5 years), Pune
+pinterest_Sr. Software Engineer, Backend
+datadog_Technical Support Engineer 1 - 2
+affirm_Software Engineer, Early Career
+palantir_Forward Deployed AI Engineer
+Roblox _Software Engineer (HN)
+airtable_Web Developer
+Ashby _Software Engineer (HN)
+datadog_Technical Support Engineer 2
+stripe_Full Stack Engineer, Expansion
+figma_Software Engineer, Machine Learning
+figma_Software Engineer, AI Platforms
 robinhood_Software Engineer, Cloud Engineering
-robinhood_Technical Sourcer, Infrastructure Engineering
-tripactions_NetSuite Developer
-palantir_Software Engineer, New Grad - Defense
-dropbox_Site Reliability Engineer
+palantir_Forward Deployed Software Engineer
+datadog_Federal Support Engineer 3 - Denver, New York
+stripe_Backend / API Engineer, Revenue Foundations
+datadog_Federal Support Engineer 2 - Denver
+palantir_Support Engineer - US Government
+airtable_Software Engineer, Compute (8+ YOE)
+palantir_Forward Deployed Software Engineer - France Government
+stripe_Software Engineer, Experimental Projects
+figma_Software Engineer, AI Product
+stripe_Security Engineer, Bridge
+datadog_Premier Support Engineer 3 - NYC
+gitlab_Intermediate Backend Engineer, Verify: Runner Core
+FUTO _Software Engineer (HN)
+brex_Software Engineer II, Product 
+stripe_Solutions Engineer, Bridge
+stripe_Broadcast Engineer
+flexport_Software Engineer I (Generalist)
+We have multiple openings for: QA Engineers, Go En_Software Engineer (HN)
+airbnb_Business Solutions Engineer, (Agentic AI)
+palantir_Software Engineer - Apollo Platform
+palantir_Web Application Developer - Defense
+pinterest_Machine Learning Engineer II
+palantir_Software Engineer, Internship - Production Infrastructure
+scaleai_Software Engineer, Full Stack – Scale GP
+checkr_Security Engineer
+palantir_Backend Software Engineer
+asana_Corporate Security Engineer
+dropbox_Machine Learning Engineer, Dash
+okta_Solutions Engineer, Alliances
+datadog_GenAI Software Engineer
+datadog_AI Research Engineer - Datadog AI Research (DAIR)
+pinterest_Sr. Security Software Engineer, Application Security
+brex_Software Engineer II, Operational AI
+tripactions_Sr Software Engineer;Global tools and integrations
+affirm_Software Engineer II, Backend (Affirm Card)
+palantir_Forward Deployed Software Engineer, Internship - US Government
+stripe_Software Engineer, Payments & Risk
+stripe_Integration Engineer (Japan)
+dropbox_Fullstack Product Software Engineer
+datadog_AI Research Engineer – Datadog AI Research (DAIR)
+twilio_Technical Support Engineer 
+IT42morrow IFT GmbH_DevOps-Engineer (m/w/d)
+coinbase_Software Engineer, Developer (Wallets and Onchain Tools) 
+QuoIntelligence _Software Engineer (HN)
+discord_Rust/C++ Software Engineer
+gitlab_Customer Success Engineer - APJ
+twilio_Applications Engineer 2
+stripe_Software Engineer, Data Orchestration
+stripe_Software Engineer,Service Ecosystem Sustainability 
+gitlab_Backend Engineer, Knowledge Graph (Rust)
+<i>Stellar Science</i> _Software Engineer (HN)
+stripe_Security Engineer, New Grad 
+affirm_Software Engineer I, Back-end (Collections)
+phonepe_Site Reliability Engineer - Big Data (7 to 11 years)
+affirm_Software Engineer I, Backend (Consumer Engineering) 
+pagerduty_Site Reliability Engineer II
+JustPark _Software Engineer (HN)
+airtable_Professional Services Engineer (East Coast)
+Confido Legal _Software Engineer (HN)
+figma_Software Engineer, Translations Platform
+stripe_Full Stack Engineer, Money as a Service
+scaleai_Distinguished Engineer
+palantir_Embedded People Engineer
+dropbox_Support Enablement Engineer Intern  (Summer 2026)
+twilio_Technical Support Engineer 2
+palantir_Software Engineer - Developer Productivity
+datadog_Enablement Systems Engineer
+stripe_Machine Learning Engineer, Stripe Assistant 
+Runpod, Inc._Forward Deployed Engineer
+Tangled _Software Engineer (HN)
+stripe_Backend / API Engineer, Privacy Products
+okta_Solutions Engineer - Auth0
+phonepe_Software Engineer(Backend) -  Merchant (5 to 7 years)
+stripe_Technical Solutions Engineer
+Ford Motor Company _Software Engineer (HN)
+stripe_Software Engineer, Data & AI
+phonepe_Site Reliability Engineer 2 - Network Operations Engineer (Bangalore)
+scaleai_ML Systems Engineer, Robotics
+stripe_Full Stack Engineer, Risk & Support
+Sage _Software Engineer (HN)
+Nebulab_Shopify Engineer
+phonepe_Site Reliability Engineer - Systems (4-8 years)
+okta_Solutions Engineer
+scaleai_Solutions Engineer, Enterprise
 figma_Software Engineer, Developer Experience
+figma_Software Engineer, Backend - Figma Weave (Tel Aviv, Israel) 
+pinterest_Sr. Software Engineer, Full Stack
+stripe_Software Engineer, Product Security Data Platforms
+coinbase_Software Engineer Intern
+pinterest_Sr. Software Engineer, tvScientific
+Pomelo Care_Software Engineer
+flexport_Software Engineer Ⅱ, Forwarding Tech - Commerce
+Duolingo _Software Engineer (HN)
+asana_Software Engineer, Reykjavik
+airtable_Data Engineer
+Brico (Series A) _Software Engineer (HN)
+figma_Software Engineer Intern, Developer Tools (2026) (London, United Kingdom)
+robinhood_Software Developer Intern, Backend (Summer 2026)
+palantir_Forward Deployed Software Engineer - Korea Forward Deployed
+palantir_Software Engineer, Internship
+brex_Software Engineer, Internship - 2026
+airbnb_Software Engineer, Infrastructure
+twilio_Software Engineer Intern - Canada
+reddit_Backend Engineer, Feeds Experience
+palantir_Privacy and Civil Liberties Software Engineer
+tripactions_Application Systems Engineer
+CodSpeed _Software Engineer (HN)
+okta_Solution Engineer, SLED
+figma_Software Engineer, Production Engineering  (London, United Kingdom)
+dropbox_ServiceNow Engineer
+Ilias Vassiliou  & Team  headhunter.digital im Auftrag_IT Support Engineer für Apple / macOS / IT-Infrastruktur (Frankfurt am Main) *
+scaleai_Machine Learning Research Engineer - Robotics
+affirm_Software Engineer II, Backend (Fraud)
+faire_Intermediate Backend Engineer
+palantir_Mixed Reality Developer
+SF Sauna -- SF Bay Area_Software Engineer (HN)
+okta_Solutions Engineer- SLED
+scaleai_Mission Software Engineer, Public Sector
+scaleai_Applied AI Engineer, Enterprise
+checkr_Support Engineer
+robinhood_Analytics Engineer
+faire_IT Support Engineer
+stripe_Developer Experience Engineer, Privy
+twitch_Software Development Engineer, Money
+figma_Software Engineer, C++
+palantir_Forward Deployed Software Engineer, New Grad - UK Government
+stripe_Full Stack Engineer, Enterprise & Ecosystem
+twilio_Personalized Support Engineer 2
+reddit_Software Engineer
+twitch_Software Engineer, Creator Monetization
+Anduril Industries_Early Career Software Engineer Warfighter Systems
+asana_Software Engineer
+okta_Distinguished Solution Engineer, Key Accounts (Central U.S.)
+twitch_Software Engineer, ML
+robinhood_Software Engineer, Streaming Platform
+OneChronos _Software Engineer (HN)
+gitlab_Professional Services Engineer, UKI
+datadog_Premier Support Engineer 2
+phonepe_Site Reliability Engineer 3 - Network Operations - Pune
+Foxglove _Software Engineer (HN)
+twitch_Software Engineer I - Ads Demand Enablement
+flexport_Software Engineer II (Commerce)
+dropbox_Full-Stack Product Software Engineer, Search Platform
+asana_Software Engineer, Data Infrastructure 
+palantir_Software Engineer - Defense Applications
+palantir_Ceph Infrastructure Engineer
+datadog_Premier Support Engineer 2 - New York
+Sesame _Software Engineer (HN)
+dropbox_Full Stack Software Engineer, Dash Experiences
+acemate.ai_Full-Stack Developer (Working Student)
+okta_Developer Support Engineer
+dropbox_Infrastructure Software Engineer, Data Observability
+asana_Fullstack Developer
+Radar Labs _Software Engineer (HN)
+PermitFlow (YC W22) _Software Engineer (HN)
+gitlab_Associate Support Engineer (AMER - PST / MST)
+flexport_Software Engineer II, AI Platform
+We’re a start-up company, we are building a local-_Software Engineer (HN)
+stripe_Software Engineer, Core Technology
+coinbase_Client Integration Engineer (Trading Systems)
+scaleai_Field Engineer, Public Sector
+twitch_Software Engineer, Safety ML
+phonepe_Site Reliability Engineer 2
+figma_Software Engineer - Figma Weave (Tel Aviv, Israel)
+palantir_Software Engineer, New Grad - Production Infrastructure
+AI startup (stealth) _Software Engineer (HN)
+palantir_Backend Software Engineer - Defense
+okta_ServiceNow UX Developer
+palantir_Forward Deployed Software Engineer - Intel
+gitlab_Intermediate Support Engineer (AMER - PST / MST)
+affirm_Software Engineer II, Backend (Credit Decisioning) 
+flexport_Software Engineer II, Forwarding Tech - Commerce, Planning, Procurement
+gitlab_Support Engineer, U.S. Government Support
+AutoDS_Backend Developer
+stripe_Forward Deployed Engineer, Privy
+dropbox_Full Stack Product Software Engineer
 stripe_Full Stack Engineer, Collaboration
-brex_Software Engineer II, Credit Limit Engineering
+brex_Software Engineer II, Activation
+robinhood_Software Developer, Data Engineering
+Silkline _Software Engineer (HN)
+OpenRent _Software Engineer (HN)
+okta_Sr Solutions Engineer - Japan
+phonepe_Service Delivery Engineer, SRE
+reddit_Machine Learning Engineer, Search and Answers
+Fronted AS_Product Engineer
+Mento_Data Engineer
+coinbase_Security Engineer, CorpSec
+dropbox_Atlassian Cloud Platform Engineer
+scaleai_Infrastructure Software Engineer, Enterprise GenAI
+Hi HN — I’m Nicole, cofounder of Gambit Robotics (_Software Engineer (HN)
+stripe_Software Engineer, Bridge
+palantir_Forward Deployed Software Engineer - Japan Forward Deployed
+Ilias Vassiliou  & Team  headhunter.digital im Auftrag_IT Support Engineer - Apple / macOS / IT-Infrastruktur (Frankfurt am Main) *
+palantir_Incident Management Engineer
+stripe_Integration Engineer 
+palantir_Compliance Engineer
+gitlab_Intermediate Backend (Go) Engineer, Gitlab Delivery -Operate
+affirm_Software Engineer I, Full Stack (Consumer Engineering)
+pinterest_Sr. Data Engineer, tvScientific
+affirm_Software Engineer II, Full-Stack (Card Acquisition)
+Instinct Science _Software Engineer (HN)
+paytm_Revenue Assurance -Process Re-Engineering
+palantir_UKG Compliance Engineer
+airtable_Software Engineer, Infrastructure (8+ YOE)
+scaleai_Software Engineer, Gen AI
+palantir_Software Engineer, Internship - Infrastructure
+stripe_Backend Engineer, Data
+stripe_Full Stack Engineer, Payments and Risk
+affirm_Software Engineer II, Backend (Consumer Engineering)
+asana_Software Engineer, Backend
+asana_Software Engineer, Product
+stripe_Integration Reliability Engineer, Technical Operations, Commerce Systems
+Deep Systems _Software Engineer (HN)
+affirm_Software Engineer II, Backend (AI Agents)
+scaleai_Solutions Engineer (Clearance Required)
+phonepe_Software Engineer (5-7 Yrs) - Core
+palantir_Forward Deployed Infrastructure Engineer - US Government
+flexport_Software Engineer Ⅰ, Forwarding Tech - Commerce
+palantir_Software Engineer - Infrastructure, Foundry Platform
+Rubin Observatory / SLAC _Software Engineer (HN)
+palantir_Full Stack Software Engineer - Application Development
+Lead Full-Stack Engineer
+palantir_Forward Deployed Software Engineer, New Grad - Commercial
+stripe_Software Engineer, Machine Learning Infrastructure
+Herakles Defense _Software Engineer (HN)
+Ardent AI _Software Engineer (HN)
+flexport_Software Engineer Ⅰ, Forwarding App
+stripe_Backend Engineer, Core Tech, Canada
+CiceroAI _Software Engineer (HN)
+scaleai_Machine Learning Research Engineer, Agents - Enterprise GenAI
+scaleai_DevOps Engineer, IPS
+robinhood_Web Engineer
+figma_Data Engineer
+scaleai_Machine Learning Engineer, International Public Sector
+tripactions_Fullstack Software Engineer
+pinterest_Sr. Security Software Engineer, Internal Identity & Access Management
+tripactions_Sr. Backend Software Engineer, Fraud Risk Platform
+asana_Software Engineering Intern - Summer 2026 (Reykjavik)
+palantir_Software Engineer - Edge
+asana_Software Engineer, CI/CD
+MEMX_DevOps Engineer
+scaleai_Machine Learning Research Scientist / Research Engineer, Post-Training
+twitch_Software Engineer I, Twitch Chat
+scaleai_Software Engineering Intern (Summer 2026) 
+stripe_Forward Deployed Engineer, Professional Services
+stripe_Software Engineer, New Grad
+stripe_Full Stack Engineer, Developer Experience & Product Platform
+We at Avride are hiring in Austin for a full-time,_Software Engineer (HN)
+River _Software Engineer (HN)
+scaleai_ML Research Engineer, ML Systems
+GiB - Gesundheit in Bewegung GmbH_Full-Stack Web Developer (m/w/d) in Vollzeit
+twitch_Undergrad Software Engineering Intern
+airtable_Product Security Engineer
+robinhood_Quality Engineer, Options
+phonepe_Software Engineer - Backend (3-5 years), Pune
+stripe_Integration Reliability Engineer, Technical Operations
+scaleai_Software Engineer, Robotics
+stripe_Machine Learning Engineer, Payments ML Accelerator
+instacart_Analytics Engineer, Lifecycle Efficiency
+paytm_Backend SSE- Dot net Engineer  ( For Nayara )
+palantir_Systems Engineer - Microsoft 365
+scaleai_Solutions Engineer, Robotics
+acemate.ai_Product / Growth Engineer (Working Student)
+okta_Sr Software Engineer - Data Platform
+palantir_Backend Software Engineer - Application Development
+stripe_Software Engineering, New Grad
+palantir_Software Engineer - Environment Platform
+scaleai_Machine Learning Research Engineer, GenAI Applied ML
+dropbox_Data Science Engineer Intern (Summer 2026)
+stripe_SaaS Operations Engineer
+Charge Robotics _Software Engineer (HN)
+stripe_Backend Engineer, Payments and Risk
+fampay_Flutter Engineer (2-4 Years)
+dropbox_Poland Software Engineering Intern (Summer 2026)
+asana_Junior Software Engineer
+gitlab_Customer Success Engineer
+stripe_Backend/API Engineer, Money as a Service
+fampay_SDE 2
+robinhood_Software Engineer, Backend
+palantir_Forward Deployed Software Engineer - Japan Government
+Digital Health Strategies _Software Engineer (HN)
+We're building AI that predicts whether a wounded _Software Engineer (HN)
+scaleai_Machine Learning Research Scientist / Engineer, Reasoning
+datadog_Technical Support Engineer 2, Premier - EMEA
+datadog_Container Runtime Engineer
+airtable_Software Engineer, Observability
+NOXON_Junior Product Engineer Wearables (Full Time) Munich, Germany
+flexport_Software Engineer II, Forwarding App
+tripactions_Sr. Application Systems Engineer
+Head of Engineering &amp; Infrastructure _Software Engineer (HN)
+palantir_Systems Engineer - Business Systems
+palantir_Software Engineer, New Grad
+asana_Fullstack Software Engineer, Reykjavik
+cigus GmbH_Embedded Software Developer (m/w/d)
+tripactions_Client Platform Engineer
+Sezzle_AI Engineer I
+Paymentology_Cloud Engineer
+dropbox_Infrastructure Software Engineer
+stripe_Software Engineer, Secrets Infrastructure
+VLM Run (<a href="https://vlm.run" rel="nofollow">_Software Engineer (HN)
+stripe_Software Engineer, Intern (Summer)
+Deducta _Software Engineer (HN)
+pinterest_Machine Learning Engineer, Core Engineering
+gitlab_Customer Success Engineer, EMEA
+scaleai_Applied AI Engineer, International Public Sector
+palantir_Information Security Engineer
+datadog_Technical Escalations Engineer 3 (Internal Developer Portal) - US-East
+coinbase_Software Engineer, Backend (Consumer - Advanced Trading)
+palantir_Software Engineer, New Grad - Defense
+palantir_Software Engineer - Core Interfaces
+pinterest_Machine Learning Engineer, Monetization Engineering
+affirm_Software Engineer II, Backend (Identity Decisioning)   
+scaleai_Software Engineer, Platform
+gitlab_Customer Success Engineer, Digital 
+Proton VPN (<a href="https://protonvpn.com/" rel="_Software Engineer (HN)
+stripe_Enterprise Integration Engineer
+stripe_Full Stack Engineer, Link
+stripe_Software Engineer, Payments
+Collective Intelligence Project _Software Engineer (HN)
+phonepe_Software Engineer - Backend (7-10 Years)
+Endo Health GmbH_AI-Solutions Engineer (m/w/d)
+okta_Solutions Engineer, Auth0
+phonepe_Software Engineer -Symphony (5-7)
+coinbase_Software Engineer - Customer Agent Interactions System
+palantir_Application Security Engineer
+gitlab_CPQ Developer 
+Lead Full-Stack Engineer
+Marker Learning _Software Engineer (HN)
+okta_Solutions Engineer, Auth0 (Central/West USA)
+stripe_Backend Engineer, UI Services
+twilio_Cloud Software Engineer
+tripactions_Sr. Backend Software Engineer
+flexport_Software Development Engineer I, SMB
+acoris AG_Developer (m/w/d) - Schwerpunkt Power Platform
+meesho_Security Engineer -1
+scaleai_Applied AI Engineer, Enterprise GenAI
+okta_Solutions Engineer, Okta 
+figma_Software Engineer, Graphics & Media
+okta_Solution Engineer 
+Schema Labs (OpenCouncil) _Software Engineer (HN)
+palantir_Forward Deployed Software Engineer - UK Government
+airtable_Software Engineer, Product Backend (2-8 YOE)
+asana_Solutions Engineer
+checkr_Python Engineer, Truework
+Apple _Software Engineer (HN)
+Accenture Federal Services_Cloud Systems Engineer
+stripe_Software Engineer, Internal Systems
+discord_Data Engineer, Analytics
+DeepL _Software Engineer (HN)
+twilio_Software Engineer Intern - United States
+datadog_Technical Curriculum Developer - Security
+Protillion Biosciences _Software Engineer (HN)
+Coder _Software Engineer (HN)
+scaleai_AI Infrastructure Engineer, Core Infrastructure
+okta_Infrastructure Support Engineer - Customer Acceleration
+acemate.ai_Intern - Full-Stack Developer
+scaleai_Software Engineer, Enterprise AI
+okta_Solutions Engineer - Italy
+phonepe_Site Reliability Engineer - Azure (4-8yrs)
+Upvest GmbH _Software Engineer (HN)
+stripe_Software Engineer, Money Movement 
+figma_Software Engineer, Fullstack - Figma Weave (Tel Aviv, Israel) 
+discord_Software Engineer, Ads
+gitlab_Intermediate Site Reliability Engineer, Environment Automation
+Arcol _Software Engineer (HN)
+Softmax _Software Engineer (HN)
+checkr_Backend Software Engineer II
+CEF AI (cef.ai) _Software Engineer (HN)
+discord_Software Engineer - Realtime Infrastructure
+coinbase_Software Engineer, Full Stack (EAA)
+QuiverAI _Software Engineer (HN)
+stripe_Software Engineer, Intern
+instacart_Software Engineer II
+phonepe_Software Engineer (5-7 years) 
+twitch_Software Engineer, ML Products
+palantir_Forward Deployed Software Engineer - Warp Speed
+pinterest_Sr. Machine Learning Engineer, Notifications
+palantir_Backend Software Engineer - Infrastructure
+scaleai_AI Infrastructure Engineer, Model Serving Platform
+stripe_Design Engineer, Expansion
+affirm_Software Engineer II, Backend (PMI Integrations)
+discord_Software Engineer, Data Platform
+affirm_Software Engineer I, Early Career Program
+stripe_Full Stack Engineer, Web Presence and Platform
+palantir_Product Reliability Engineer - Defense
+pinterest_Sr. Machine Learning Engineer, Monetization Engineering
+twitch_Software Engineer
+twilio_Developer Evangelist
+affirm_Software Engineering Intern - Summer 2026
+asana_Audio Visual Engineer
+paytm_EM - Backend ( Insurance )
+scaleai_Forward Deployed Engineer, GenAI 
+scaleai_Site Reliability Engineer / DevOps
+flexport_Software Engineer I, Forwarding App
+palantir_Forward Deployed Engineer - Mixed Reality
+pinterest_Sr. Machine Learning Engineer, Ads Ranking 
+pinterest_Sr. Machine Learning Engineer, Core Engineering 
+checkr_Software Engineer II
+coinbase_Software Engineer (Institutional - Tokenization)
+Dr. Ansay Ltd._Working Student AI Engineering (m/f/d) - Berlin & Remote
+scaleai_Machine Learning Systems Research Engineer, Agent Post-training - Enterprise GenAI
+phonepe_Software Engineer - Backend (5-7 years), Pune
+airtable_Software Engineer, Infrastructure (2-8 YOE)
+datadog_Technical Escalations Engineer 2 (APM) - EMEA
+figma_Software Engineer, Full Stack
+scaleai_Security Engineer, Infrastructure & Security
+stripe_Backend Engineer/API, Payments and Risk
+asana_Security Engineer, Detection Engineering
+affirm_Software Engineer II, Backend (Credit Decisioning)
+tripactions_NetSuite Developer
+pinterest_ Software Engineer II, Full Stack
+asana_Software Engineering Intern - Summer 2026 (Warsaw)
+coinbase_Software Engineer, EAA Integrations
+affirm_Software Engineer, Backend (Marketplace Performance)
+stripe_Integration Engineer, Professional Services
+paytm_Business Analyst - Process Re-Engineering
+asana_Security Engineer, Red Team 
+pinterest_Sr. Machine Learning Engineer, tvScientific
+instacart_Machine Learning Engineer II, Economics
+scaleai_Robotics Engineer
+scaleai_ Machine Learning Research Engineer, Agent Data Foundation - Enterprise GenAI
+dropbox_Fullstack Product Software Engineer, DocSend
+twitch_Software Engineer I
+pinterest_Sr. ML Ops Engineer, tvScientific
+dropbox_Site Reliability Engineer
+Justhome GmbH_Full Stack Developer (m/w/d)
+palantir_Software Engineer, New Grad - Infrastructure
+Zed Industries _Software Engineer (HN)
+coinbase_Site Reliability Engineer, IT Infrastructure
+coinbase_Software Engineer, DevSec
+gitlab_Intermediate Site Reliability Engineer, Tenant Scale: Tenant Services
+dropbox_Network Engineer
+coinbase_Software Engineer - Full Stack (EAA - Compliance)
+dropbox_Infrastructure Software Engineer, Data Platform
+coinbase_Software Engineer
+IT42morrow IFT GmbH_Fullstack-Entwickler Java (m/w/d)
+Arboreal Management / Great Expectations _Software Engineer (HN)
+airtable_Software Engineer, Product Backend (8+ YOE)
+palantir_Platform Intelligence Engineer
+tripactions_Sr. Cloud Security Engineer
+slice_Software Developer, Services
+dropbox_Infrastructure Software Engineer, API Platform
+instacart_Software Engineer II, FoodStorm
+stripe_Software Engineer, Money as a Service
+robinhood_Software Backend Engineer, Credit Cards & Banking Platform
+palantir_Forward Deployed Software Engineer - AUS Government
+scaleai_Software Engineer - New Grad
 reddit_Software Engineer, Ads
 pinterest_Software Engineer, Backend
-instacart_Software Engineer II, FoodStorm
+meesho_Security Engineer IV
+figma_Software Engineer, Distributed Systems
+Kroo _Software Engineer (HN)
+flexport_Software Engineer II, Customs
+stripe_Backend Engineer, Forward Deployed Engineering
+scaleai_Security Engineer, Product Security
+Marker Learning _Software Engineer (HN)
+EVIDENT Europe GmbH_Setup Developer (m/f/d)
+twilio_Software Engineer (L3)
+BitMEX_Growth Engineer
+palantir_Forward Deployed Software Engineer - US Government
+figma_Security Engineer
+palantir_Software Engineer - Apollo Systems
+flexport_Software Engineer II, Import Team
+brex_Data Engineer
+Large Space Structures GmbH_Requirements and Verification Systems Engineer
+Careforce AI (aka Helpcare) _Software Engineer (HN)
+pinterest_Sr. Backend Engineer, tvScientific
+meesho_Software Development Engineer III -Backend
+Lithic (<a href="https://lithic.com" rel="nofollow_Software Engineer (HN)
+phonepe_Software Engineer, Backend (5-7) -  BFSI 
+Rivet _Software Engineer (HN)
+figma_Software Engineer, Growth & Monetization
+twilio_Software Engineer Intern (June start, Remote-Ireland)
+brex_Software Engineer II, Credit Limit Engineering
+stripe_Backend Engineer, Core Technology
+scaleai_Software Engineer, Infrastructure & Security
+scaleai_Software Engineer, Robotics & Autonomous Systems
+scaleai_Software Engineer, Enterprise
+LiveEO _Software Engineer (HN)
+coinbase_Machine Learning Engineer Intern
+palantir_Forward Deployed Enablement Engineer - Customer Success
+palantir_Forward Deployed Reliability Engineer
+twilio_Software Engineer (L2)
+checkr_Sr. Software Engineer
+Blueberry Pediatrics _Software Engineer (HN)
+Chainguard_Technical Support Engineer EMEA
+pinterest_Software Engineering Intern 2026 (Mexico City)
+gusto_GTM Analytics Engineer
+phonepe_Site Reliability Engineer 3
+meesho_Software Development Engineer - IV - Backend
+okta_Site Reliability Engineer (Auth0)
+Clipster _Software Engineer (HN)
+palantir_Software Engineer, Internship - Defense Tech
+pinterest_Machine Learning Engineer, tvScientific
+scaleai_AI Research Engineer, Enterprise Evaluations
+flexport_Software Engineer II (Generalist)
+palantir_Forward Deployed Software Engineer - Tactical Edge
+stripe_Backend Engineer, Developer Experience & Product Platform 
+robinhood_Technical Sourcer, Infrastructure Engineering
+figma_Software Engineer, Production Engineering
+stripe_Design Engineer, Presence
+palantir_Forward Deployed Software Engineer - Autonomous Systems C2
