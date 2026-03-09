@@ -1,9 +1,16 @@
 import time
 import schedule
-import json
-import os
 import sys
-from config import SEEN_JOBS_FILE, JOBS_DB_FILE, MIN_SCORE_TO_ALERT
+import logging
+import os
+from dotenv import load_dotenv
+from config import MIN_SCORE_TO_ALERT
+
+# Load environment variables from .env
+load_dotenv()
+
+# Storage
+import storage.database as db
 
 # Sources
 from sources.greenhouse_sources import greenhouse_jobs
@@ -14,121 +21,148 @@ from sources.yc_sources import get_yc_jobs
 from sources.hackernews_sources import get_hackernews_jobs
 from sources.company_discovery import run_discovery
 
-# Filters & Ranking
+# Filters
 from filters.backend_filter import is_backend
-from ranking.job_ranker import calculate_application_score
+from filters.llm_matcher import LLMMatcher
 
 # Notifier
 from notifier.telegram_bot import send_job
 
-def load_seen():
-    if not os.path.exists(SEEN_JOBS_FILE): return set()
-    try:
-        with open(SEEN_JOBS_FILE, "r") as f: return set(f.read().splitlines())
-    except: return set()
+# Setup Logging
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout)
+    ]
+)
+logger = logging.getLogger(__name__)
 
-def save_seen(seen):
-    try:
-        with open(SEEN_JOBS_FILE, "w") as f:
-            for job in seen: f.write(job + "\n")
-    except: pass
-
-def save_jobs_db(jobs):
-    try:
-        current_db = []
-        if os.path.exists(JOBS_DB_FILE):
-            with open(JOBS_DB_FILE, 'r') as f: current_db = json.load(f)
-        db_dict = {f"{j['company']}_{j['title']}": j for j in current_db}
-        for job in jobs:
-            job_id = f"{job['company']}_{job['title']}"
-            if job_id not in db_dict: db_dict[job_id] = job
-            else:
-                old_status = db_dict[job_id].get('status')
-                db_dict[job_id] = job
-                if old_status: db_dict[job_id]['status'] = old_status
-        with open(JOBS_DB_FILE, "w") as f: json.dump(list(db_dict.values()), f, indent=4)
-    except: pass
-
-seen = load_seen()
+# Initialize Matcher
+matcher = LLMMatcher()
 
 def run_engine():
-    print("--- 🚀 FULL ENGINE SCAN STARTING ---")
+    logger.info("--- 🚀 FULL ENGINE SCAN STARTING ---")
     all_jobs = []
     
-    # 1. API Sources
-    print("[1/7] Fetching Remotive...")
-    all_jobs.extend(get_remotive_jobs())
-    print("[2/7] Fetching Arbeitnow...")
-    all_jobs.extend(get_arbeitnow_jobs())
-    print("[3/7] Fetching RemoteOK, Jobicy, WWR...")
-    all_jobs.extend(get_remoteok_jobs())
-    all_jobs.extend(get_jobicy_jobs())
-    all_jobs.extend(get_wwr_jobs())
-    
-    # 2. Tech Sources
-    print("[4/7] Fetching GitHub Job Trackers...")
-    all_jobs.extend(get_github_jobs())
-    print("[5/7] Fetching HackerNews 'Who is Hiring'...")
-    all_jobs.extend(get_hackernews_jobs())
-    
-    # 3. Venture/Board Sources
-    print("[6/7] Fetching YC Startup Jobs...")
-    all_jobs.extend(get_yc_jobs())
-    print("[7/7] Fetching 100+ Greenhouse/Lever Boards...")
-    all_jobs.extend(greenhouse_jobs())
-    all_jobs.extend(lever_jobs())
+    try:
+        # 1. API Sources
+        logger.info("[1/7] Fetching Remotive...")
+        all_jobs.extend(get_remotive_jobs() or [])
+        
+        logger.info("[2/7] Fetching Arbeitnow...")
+        all_jobs.extend(get_arbeitnow_jobs() or [])
+        
+        logger.info("[3/7] Fetching RemoteOK, Jobicy, WWR...")
+        all_jobs.extend(get_remoteok_jobs() or [])
+        all_jobs.extend(get_jobicy_jobs() or [])
+        all_jobs.extend(get_wwr_jobs() or [])
+        
+        # 2. Tech Sources
+        logger.info("[4/7] Fetching GitHub Job Trackers...")
+        all_jobs.extend(get_github_jobs() or [])
+        
+        logger.info("[5/7] Fetching HackerNews 'Who is Hiring'...")
+        all_jobs.extend(get_hackernews_jobs() or [])
+        
+        # 3. Venture/Board Sources
+        logger.info("[6/7] Fetching YC Startup Jobs...")
+        all_jobs.extend(get_yc_jobs() or [])
+        
+        logger.info("[7/7] Fetching Greenhouse/Lever Boards...")
+        all_jobs.extend(greenhouse_jobs() or [])
+        all_jobs.extend(lever_jobs() or [])
 
-    print(f"--- TOTAL FOUND: {len(all_jobs)} ---")
+    except Exception as e:
+        logger.error(f"Error during fetching sources: {e}")
+
+    logger.info(f"--- TOTAL FOUND: {len(all_jobs)} ---")
     
-    processed_jobs = []
     new_jobs_count = 0
-
+    
     for job in all_jobs:
         if not job: continue
-        if job.get('description') is None: job['description'] = ""
-        if job.get('url') is None: job['url'] = ""
-        if job.get('title') is None: job['title'] = "Unknown"
-        if job.get('company') is None: job['company'] = "Unknown"
         
-        if is_backend(job.get("title", "")):
-            from filters.resume_matcher import get_matched_skills
-            job['matched_skills'] = get_matched_skills(job.get('description') or '')
-            score = calculate_application_score(job)
-            job['score'] = score
-            if 'status' not in job: job['status'] = 'new'
-            processed_jobs.append(job)
+        # Normalize Data
+        title = job.get('title', 'Unknown')
+        company = job.get('company', 'Unknown')
+        description = job.get('description', '')
+        url = job.get('url', '')
+        
+        # 1. Quick Keyword Filter (Save LLM tokens & time)
+        # Only process Backend/Software Engineer roles
+        if not is_backend(title):
+            continue
+            
+        # 2. Check Deduplication
+        # Create a consistent ID (slug-like)
+        safe_company = "".join(x for x in company if x.isalnum())
+        safe_title = "".join(x for x in title if x.isalnum())
+        job_id = f"{safe_company}_{safe_title}".lower()[:255] # truncate if too long
+        
+        if db.job_exists(job_id):
+            continue
 
-            job_id = f"{job.get('company')}_{job.get('title')}"
-            if job_id not in seen:
-                if score >= MIN_SCORE_TO_ALERT:
-                    print(f"🔥 NEW HIGH MATCH: {job.get('title')} @ {job.get('company')} ({score})")
-                    send_job(job, score)
-                    new_jobs_count += 1
-                seen.add(job_id)
+        # 3. LLM Match (With small delay for Gemini Free Tier)
+        time.sleep(4)
+        match_result = matcher.match_job(title, description)
+        score = match_result['match_score']
+        reason = match_result['match_reason']
+        
+        # 4. Save to DB
+        job_data = {
+            'id': job_id,
+            'title': title,
+            'company': company,
+            'url': url,
+            'location': job.get('location', ''),
+            'description': description,
+            'date_posted': job.get('date_posted', ''),
+            'source': job.get('source', 'Unknown'),
+            'is_remote': job.get('is_remote', False),
+            'salary': job.get('salary', ''),
+            'status': 'new',
+            'match_score': score,
+            'match_reason': reason
+        }
+        
+        saved = db.save_job(job_data)
+        
+        # 5. Alert
+        if saved and score >= MIN_SCORE_TO_ALERT:
+            logger.info(f"🔥 NEW MATCH: {title} @ {company} ({score}) - {reason}")
+            try:
+                # Add score/reason to job dict for the notifier
+                job['score'] = score
+                job['match_reason'] = reason
+                send_job(job, score)
+                new_jobs_count += 1
+            except Exception as e:
+                logger.error(f"Failed to send alert: {e}")
 
-    print(f"Matched: {len(processed_jobs)} | New Alerts: {new_jobs_count}")
-    
-    print("Saving seen jobs...")
-    save_seen(seen)
-    print("Saving jobs database...")
-    save_jobs_db(processed_jobs)
-    print("Scan complete.")
+    logger.info(f"Scan complete. New High Matches: {new_jobs_count}")
 
+# Schedule
 schedule.every(10).minutes.do(run_engine)
 
 if __name__ == "__main__":
-    print("Job Discovery Engine Running...")
+    logger.info("Job Discovery Engine Running (SQLite + LLM Powered)...")
     
     # Discovery Expansion
-    try: run_discovery()
-    except: pass
+    try: 
+        logger.info("Running Company Discovery...")
+        run_discovery()
+    except Exception as e: 
+        logger.error(f"Discovery failed: {e}")
 
-    run_engine() # Start first scan
+    # Initial Run
+    run_engine()
 
     if "--run-once" in sys.argv:
-        print("Done. Exiting CI mode.")
+        logger.info("Done. Exiting (Run-Once Mode).")
         sys.exit(0)
 
+    # Loop
     while True:
         schedule.run_pending()
         time.sleep(60)

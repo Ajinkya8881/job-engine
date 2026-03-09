@@ -10,3 +10,5 @@ webdriver-manager
 pandas
 tqdm
 geopy
+google-generativeai
+python-dotenv

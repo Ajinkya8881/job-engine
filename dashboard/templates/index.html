@@ -3,205 +3,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajinkya's Job Center</title>
+    <title>Job Engine Kanban</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --bg: #0f172a; --card-bg: #1e293b; --text: #f8fafc; --primary: #38bdf8; --secondary: #94a3b8; --accent: #22c55e; --danger: #f87171; --warning: #facc15; }
-        body { font-family: 'Inter', sans-serif; margin: 0; padding: 20px; background-color: var(--bg); color: var(--text); }
-        header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 15px; }
-        
-        .tabs { display: flex; gap: 10px; margin-bottom: 20px; border-bottom: 1px solid #334155; padding-bottom: 10px; }
-        .tab { padding: 10px 20px; cursor: pointer; border-radius: 6px; color: var(--secondary); font-weight: 600; transition: 0.3s; }
-        .tab.active { background: var(--primary); color: #000; }
-        .tab:hover:not(.active) { background: #334155; color: #fff; }
-
-        .tab-content { display: none; }
-        .tab-content.active { display: block; }
-
-        .main-container { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-        .column-header { font-weight: bold; color: var(--primary); border-bottom: 2px solid var(--card-bg); padding-bottom: 10px; margin-bottom: 20px; font-size: 1.2em; }
-        .job-card { background: var(--card-bg); padding: 20px; border-radius: 12px; border: 1px solid #334155; margin-bottom: 20px; transition: transform 0.2s; position: relative; }
-        .job-card:hover { transform: translateY(-3px); border-color: var(--primary); }
-        .score-badge { position: absolute; top: 15px; right: 20px; font-size: 1.2em; font-weight: 800; color: var(--accent); }
-        h2 { margin: 0; font-size: 1.1em; color: #fff; width: 85%; }
-        .company { color: var(--primary); font-size: 0.95em; margin: 5px 0; font-weight: 600; }
-        .loc { color: var(--secondary); font-size: 0.85em; margin-bottom: 10px; }
-        .intel { background: rgba(0,0,0,0.3); padding: 12px; border-radius: 8px; margin: 15px 0; font-size: 0.85em; }
-        .match-list { color: var(--accent); margin-bottom: 8px; }
-        .missing-list { color: var(--danger); font-weight: 600; }
-        .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 15px; }
-        .btn { padding: 10px; border-radius: 6px; border: 1px solid #334155; background: transparent; color: var(--secondary); cursor: pointer; font-size: 0.8em; text-decoration: none; text-align: center; font-weight: 600; border: 1px solid #475569; }
-        .btn:hover { background: #334155; color: #fff; }
-        .btn-apply { background: var(--primary); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
-        .btn-save { background: var(--accent); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
-        .btn-ignore { background: var(--danger); color: #000; border: none; font-weight: 800; font-size: 0.9em; }
-        .badge { font-size: 0.7em; padding: 2px 8px; border-radius: 4px; font-weight: bold; margin-right: 5px; }
-        .badge-visa { background: rgba(56, 189, 248, 0.2); color: var(--primary); }
-        .badge-salary { background: rgba(250, 204, 21, 0.2); color: var(--warning); }
+        .kanban-col { min-width: 320px; max-width: 320px; }
+        /* Custom scrollbar for columns */
+        .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background: #1e293b; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background: #475569; border-radius: 3px; }
+        .drag-over { background-color: rgba(56, 189, 248, 0.05); border: 2px dashed #38bdf8; }
     </style>
 </head>
-<body>
-
-    <header>
-        <h1>Ajinkya's Tech Job Engine 🚀</h1>
-        <div style="color:var(--secondary);">Focus: <b>Java / SDE / Freshers (0-3 yrs)</b></div>
+<body class="bg-slate-900 text-slate-100 font-sans h-screen flex flex-col overflow-hidden">
+    
+    <!-- Header -->
+    <header class="p-4 border-b border-slate-700 flex justify-between items-center bg-slate-800 shadow-lg z-20">
+        <div>
+            <h1 class="text-xl font-bold flex items-center gap-2">
+                <span class="text-2xl">🚀</span> 
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-sky-400 to-blue-500">Job Engine Intelligence</span>
+            </h1>
+            <p class="text-xs text-slate-400 mt-1">Drag jobs to manage your pipeline</p>
+        </div>
+        <div class="flex gap-4 text-xs font-mono text-slate-400">
+            <div class="px-3 py-1 bg-slate-700 rounded border border-slate-600">
+                <span class="text-sky-400 font-bold">{{ columns.new|length }}</span> New
+            </div>
+            <div class="px-3 py-1 bg-slate-700 rounded border border-slate-600">
+                <span class="text-yellow-400 font-bold">{{ columns.applied|length }}</span> Applied
+            </div>
+        </div>
     </header>
 
-    <div class="tabs">
-        <div class="tab active" onclick="switchTab('new-tab')">New Jobs ({{ data.new|length }})</div>
-        <div class="tab" onclick="switchTab('applied-tab')">Applied ({{ data.applied|length }})</div>
-        <div class="tab" onclick="switchTab('ignored-tab')">Ignored ({{ data.ignored|length }})</div>
-    </div>
-
-    <!-- NEW JOBS TAB -->
-    <div id="new-tab" class="tab-content active">
-        <div class="main-container">
-            <div class="column">
-                <div class="column-header">🇮🇳 Top India Tech Roles</div>
-                {% set india_jobs = [] %}
-                {% for job in data.new if job.is_preferred_location and job.score > 0 %}
-                    {% set _ = india_jobs.append(job) %}
-                    <div class="job-card">
-                        <div class="score-badge">{{ job.score }}</div>
-                        <h2>{{ job.title }}</h2>
-                        <div class="company">{{ job.company }}</div>
-                        <div class="loc">📍 {{ job.location }}</div>
-                        {% if job.salary_est != "N/A" %}<span class="badge badge-salary">💰 {{ job.salary_est }}</span>{% endif %}
-                        <div class="intel">
-                            <div class="match-list"><b>✅ YOUR SKILLS:</b> {{ job.matched_skills|join(', ') if job.matched_skills else 'None' }}</div>
-                            {% if job.missing_skills %}<div class="missing-list"><b>⚠️ REQUIRED BY JOB:</b> {{ job.missing_skills|join(', ') }}</div>{% endif %}
-                        </div>
-                        <div class="actions">
-                            <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Cover Letter</button>
-                            <button class="btn" onclick="generateReferral('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">🤝 Referral Draft</button>
-                            <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Interview Prep</button>
-                            <button class="btn" onclick="findRecruiter('{{ job.company|replace("'", "\\'") }}')">🔵 Find Recruiter</button>
-                            <a href="{{ job.url }}" target="_blank" class="btn btn-apply" style="grid-column: span 1;">APPLY LINK</a>
-                            <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
-                            <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
-                        </div>
-                    </div>
-                {% endfor %}
+    <!-- Board -->
+    <main class="flex-1 flex overflow-x-auto p-6 gap-6 scrollbar-thin">
+        
+        <!-- Macro for Column -->
+        {% macro column(title, status, jobs, color_class) %}
+        <div class="kanban-col flex flex-col bg-slate-800/50 rounded-xl border border-slate-700/50 backdrop-blur-sm h-full shadow-xl transition-colors duration-200"
+             ondrop="drop(event, '{{ status }}')" 
+             ondragover="allowDrop(event)"
+             ondragleave="leaveDrop(event)">
+            
+            <!-- Column Header -->
+            <div class="p-4 border-b border-slate-700/50 flex justify-between items-center sticky top-0 bg-slate-800/90 z-10 rounded-t-xl backdrop-blur-md">
+                <div class="flex items-center gap-2">
+                    <div class="w-3 h-3 rounded-full {{ color_class }}"></div>
+                    <h2 class="font-bold text-sm uppercase tracking-wide text-slate-200">{{ title }}</h2>
+                </div>
+                <span class="text-xs font-mono bg-slate-900 px-2 py-1 rounded text-slate-400">{{ jobs|length }}</span>
             </div>
 
-            <div class="column">
-                <div class="column-header">🌍 Best Global Matches</div>
-                {% for job in data.new if not job.is_preferred_location and job.score > 0 %}
-                <div class="job-card">
-                    <div class="score-badge">{{ job.score }}</div>
-                    <h2>{{ job.title }}</h2>
-                    <div class="company">{{ job.company }}</div>
-                    <div class="loc">📍 {{ job.location }}</div>
-                    <div style="margin-bottom:10px;">
-                        {% if job.visa_sponsorship %}<span class="badge badge-visa">✈️ VISA SPONSOR</span>{% endif %}
-                        {% if job.salary_est != "N/A" %}<span class="badge badge-salary">💰 {{ job.salary_est }}</span>{% endif %}
+            <!-- Jobs List -->
+            <div class="flex-1 overflow-y-auto p-3 space-y-3 scrollbar-thin" id="col-{{ status }}">
+                {% for job in jobs %}
+                <div id="{{ job.id }}" draggable="true" ondragstart="drag(event)" 
+                     class="bg-slate-800 p-4 rounded-lg border border-slate-700 shadow-sm hover:shadow-md hover:border-sky-500/50 cursor-move relative group transition-all duration-200 hover:-translate-y-1">
+                    
+                    <!-- Score Badge -->
+                    {% if job.match_score >= 90 %}
+                    <div class="absolute -top-2 -right-2 text-[10px] font-bold bg-green-500/20 text-green-400 border border-green-500/50 px-2 py-0.5 rounded-full shadow-sm backdrop-blur-md z-10">
+                        {{ job.match_score }}% MATCH
                     </div>
-                    <div class="intel">
-                        <div class="match-list"><b>✅ YOUR SKILLS:</b> {{ job.matched_skills|join(', ') if job.matched_skills else 'None' }}</div>
-                        {% if job.missing_skills %}<div class="missing-list"><b>⚠️ REQUIRED BY JOB:</b> {{ job.missing_skills|join(', ') }}</div>{% endif %}
+                    {% elif job.match_score >= 70 %}
+                    <div class="absolute -top-2 -right-2 text-[10px] font-bold bg-sky-500/20 text-sky-400 border border-sky-500/50 px-2 py-0.5 rounded-full shadow-sm backdrop-blur-md z-10">
+                        {{ job.match_score }}% MATCH
                     </div>
-                    <div class="actions">
-                        <button class="btn" onclick="generateCoverLetter('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">📄 Cover Letter</button>
-                        <button class="btn" onclick="generateReferral('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}')">🤝 Referral Draft</button>
-                        <button class="btn" onclick="showInterviewPrep('{{ job.title|replace("'", "\\'") }}')">🧠 Interview Prep</button>
-                        <button class="btn" onclick="findRecruiter('{{ job.company|replace("'", "\\'") }}')">🔵 Find Recruiter</button>
-                        <a href="{{ job.url }}" target="_blank" class="btn btn-apply" style="grid-column: span 1;">APPLY LINK</a>
-                        <button class="btn btn-save" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'applied')">✅ MARK APPLIED</button>
-                        <button class="btn btn-ignore" style="grid-column: span 2;" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'ignored')">✖ IGNORE / BROKEN LINK</button>
+                    {% elif job.match_score >= 40 %}
+                    <div class="absolute -top-2 -right-2 text-[10px] font-bold bg-yellow-500/20 text-yellow-400 border border-yellow-500/50 px-2 py-0.5 rounded-full shadow-sm backdrop-blur-md z-10">
+                        {{ job.match_score }}%
+                    </div>
+                    {% endif %}
+
+                    <!-- Job Content -->
+                    <div class="pr-2">
+                        <h3 class="font-semibold text-sm text-slate-100 leading-snug mb-1">{{ job.title }}</h3>
+                        <div class="text-xs text-sky-400 font-medium mb-2 flex items-center gap-1">
+                            🏢 {{ job.company }}
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-3">
+                            <span class="text-[10px] bg-slate-700/50 px-1.5 py-0.5 rounded text-slate-400 border border-slate-600/50">
+                                📍 {{ job.location|truncate(20) }}
+                            </span>
+                            {% if job.is_remote %}
+                            <span class="text-[10px] bg-indigo-500/20 px-1.5 py-0.5 rounded text-indigo-300 border border-indigo-500/30">
+                                🌐 Remote
+                            </span>
+                            {% endif %}
+                            <span class="text-[10px] bg-slate-700/50 px-1.5 py-0.5 rounded text-slate-400 border border-slate-600/50">
+                                📅 {{ job.date_posted[:10] }}
+                            </span>
+                        </div>
+
+                        <!-- AI Reason -->
+                        {% if job.match_reason %}
+                        <div class="text-[11px] bg-slate-900/50 p-2 rounded text-slate-300 border-l-2 border-purple-500 mb-3 italic leading-relaxed">
+                            "{{ job.match_reason }}"
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Actions -->
+                    <div class="flex gap-2 pt-2 border-t border-slate-700/50 opacity-100 lg:opacity-60 group-hover:opacity-100 transition-opacity">
+                        <a href="{{ job.url }}" target="_blank" class="flex-1 bg-sky-600 hover:bg-sky-500 text-white text-xs font-semibold py-1.5 px-3 rounded text-center transition-colors shadow-sm">
+                            Apply ↗
+                        </a>
+                        <button onclick="generateLetter('{{ job.id }}')" class="bg-slate-700 hover:bg-slate-600 text-slate-200 text-xs py-1.5 px-3 rounded border border-slate-600 transition-colors" title="Generate Cover Letter">
+                            📄 AI Letter
+                        </button>
                     </div>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
+        {% endmacro %}
 
-    <!-- APPLIED JOBS TAB -->
-    <div id="applied-tab" class="tab-content">
-        <div class="main-container">
-            <div class="column" style="grid-column: span 2;">
-                <div class="column-header">📝 Your Applications</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                {% for job in data.applied %}
-                    <div class="job-card">
-                        <div class="score-badge">{{ job.score }}</div>
-                        <h2>{{ job.title }}</h2>
-                        <div class="company">{{ job.company }}</div>
-                        <div class="loc">📍 {{ job.location }}</div>
-                        <div class="actions">
-                            <button class="btn" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'new')">⏪ Move to New</button>
-                            <a href="{{ job.url }}" target="_blank" class="btn">View Link</a>
-                        </div>
-                    </div>
-                {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+        {{ column("New Leads", "new", columns.new, "bg-sky-500") }}
+        {{ column("Applied", "applied", columns.applied, "bg-yellow-500") }}
+        {{ column("Interviewing", "interview", columns.interview, "bg-purple-500") }}
+        {{ column("Offers", "offer", columns.offer, "bg-green-500") }}
+        {{ column("Rejected", "rejected", columns.rejected, "bg-red-500") }}
 
-    <!-- IGNORED JOBS TAB -->
-    <div id="ignored-tab" class="tab-content">
-        <div class="main-container">
-            <div class="column" style="grid-column: span 2;">
-                <div class="column-header">✖ Ignored / Broken Roles</div>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                {% for job in data.ignored %}
-                    <div class="job-card" style="opacity: 0.6;">
-                        <h2>{{ job.title }}</h2>
-                        <div class="company">{{ job.company }}</div>
-                        <div class="loc">📍 {{ job.location }}</div>
-                        <div class="actions">
-                            <button class="btn" onclick="updateStatus('{{ job.company|replace("'", "\\'") }}', '{{ job.title|replace("'", "\\'") }}', 'new')">🔄 Restore to New</button>
-                        </div>
-                    </div>
-                {% endfor %}
-                </div>
-            </div>
-        </div>
-    </div>
+    </main>
 
     <script>
-        function switchTab(tabId) {
-            document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-            document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-            document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+        function allowDrop(ev) {
+            ev.preventDefault();
+            ev.currentTarget.classList.add('drag-over');
+        }
+        
+        function leaveDrop(ev) {
+            ev.currentTarget.classList.remove('drag-over');
         }
 
-        function updateStatus(company, title, status) {
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            ev.target.style.opacity = '0.5';
+        }
+
+        function drop(ev, newStatus) {
+            ev.preventDefault();
+            const col = ev.currentTarget;
+            col.classList.remove('drag-over');
+            
+            var jobId = ev.dataTransfer.getData("text");
+            var card = document.getElementById(jobId);
+            card.style.opacity = '1';
+            
+            // Find the list container within the column
+            const list = col.querySelector('.overflow-y-auto');
+            list.prepend(card); // Add to top
+
+            // API Call
             fetch('/update_status', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
-                body: JSON.stringify({ company, title, status })
-            }).then(() => location.reload());
+                body: JSON.stringify({ id: jobId, status: newStatus })
+            }).then(res => {
+                if(!res.ok) {
+                    alert("Failed to save status update");
+                    location.reload();
+                }
+            });
         }
-        function findRecruiter(company) {
-            const query = encodeURIComponent(`Talent Acquisition Recruiter Engineering lead ${company}`);
-            window.open(`https://www.linkedin.com/search/results/people/?keywords=${query}`, '_blank');
-        }
-        function generateCoverLetter(company, title) {
-            fetch(`/generate_cover_letter/${encodeURIComponent(company)}/${encodeURIComponent(title)}`)
-            .then(res => res.json()).then(data => {
+        
+        // Reset opacity if drag ends without drop
+        document.addEventListener("dragend", function(event) {
+            event.target.style.opacity = "1";
+        });
+
+        function generateLetter(id) {
+            const btn = event.currentTarget;
+            const originalText = btn.innerText;
+            btn.innerText = "⏳...";
+            
+            fetch(`/generate_cover_letter/${id}`)
+            .then(res => res.json())
+            .then(data => {
                 const blob = new Blob([data.letter], { type: 'text/plain' });
                 const url = window.URL.createObjectURL(blob);
                 const a = document.createElement('a');
                 a.href = url;
-                a.download = `Cover_Letter_${company.replace(/\s+/g, '_')}.txt`;
+                a.download = `Cover_Letter.txt`;
                 a.click();
+                btn.innerText = originalText;
             });
-        }
-        function generateReferral(company, title) {
-            fetch(`/generate_referral/${encodeURIComponent(company)}/${encodeURIComponent(title)}`)
-            .then(res => res.json()).then(data => {
-                const blob = new Blob([data.text], { type: 'text/plain' });
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = `Referral_Request_${company.replace(/\s+/g, '_')}.txt`;
-                a.click();
-            });
-        }
-        function showInterviewPrep(role) {
-            fetch(`/interview_prep/${encodeURIComponent(role)}`)
-            .then(res => res.json()).then(data => alert(data.questions.join("\n\n")));
         }
     </script>
 </body>

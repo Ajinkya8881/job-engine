@@ -22,26 +22,27 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: '3.9'
+        python-version: '3.10'
 
     - name: Install Dependencies
       run: |
-        pip install requests schedule flask selenium beautifulsoup4 lxml python-telegram-bot fake-useragent webdriver-manager pandas tqdm geopy
+        pip install -r requirements.txt
 
     - name: Run Job Engine
       env:
         BOT_TOKEN: ${{ secrets.BOT_TOKEN }}
         CHAT_ID: ${{ secrets.CHAT_ID }}
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
       run: |
-        python3 main.py --run-once
+        python main.py --run-once
 
     - name: Commit & Push New Jobs
       run: |
         git config --global user.name "JobBot"
         git config --global user.email "bot@github.com"
-        git add -f storage/seen_jobs.txt storage/jobs_db.json
+        git add storage/jobs.db
         if [ -n "$(git status --porcelain)" ]; then
-          git commit -m "Auto-update jobs [skip ci]"
+          git commit -m "Auto-update jobs.db [skip ci]"
           git pull --rebase origin main
           git push origin main
         else

@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  job-engine:
+    build: .
+    container_name: job-engine-24-7
+    restart: unless-stopped
+    volumes:
+      # Persist the database
+      - ./storage:/app/storage
+      # Allow editing lists without rebuilding
+      - ./company_lists:/app/company_lists
+      # Allow editing config without rebuilding
+      - ./config.py:/app/config.py
+    environment:
+      # Pass your API keys here or in .env file
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - BOT_TOKEN=${BOT_TOKEN}
+      - CHAT_ID=${CHAT_ID}
+    ports:
+      - "5000:5000"
